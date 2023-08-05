@@ -1,0 +1,11 @@
+0.7
+2020.2
+Oct 14 2022
+05:20:55
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.sim/SetValue/behav/xsim/glbl.v,1665704903,verilog,,,,glbl,,uvm,,,,,,
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/SetValue/new/TestSetValue.sv,1685211454,systemVerilog,,,,TestSetValue,,uvm,,,,,,
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/imports/Common/Debouncer.v,1684810700,verilog,,C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/SetValue.v,,Debouncer,,uvm,,,,,,
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/imports/Common/SegmentDisplay.v,1681321940,verilog,,C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/imports/Common/SquareWave.v,,SegmentDisplay,,uvm,,,,,,
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/imports/Common/SquareWave.v,1681003696,verilog,,C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/BldcDriver.v,,SquareWave,,uvm,,,,,,
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/BldcDriver.v,1685159307,verilog,,C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/imports/Common/Debouncer.v,,BldcDriver,,uvm,,,,,,
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/SetValue.v,1685211525,verilog,,,,SetValue,,uvm,,,,,,

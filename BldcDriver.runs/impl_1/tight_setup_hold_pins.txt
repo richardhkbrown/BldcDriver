@@ -1,0 +1,11 @@
++====================+===================+===============================+
+| Launch Setup Clock | Launch Hold Clock | Pin                           |
++====================+===================+===============================+
+| CLKOUT0            | sys_clk_pin       | modPwm/D_reg/D                |
+| sys_clk_pin        | sys_clk_pin       | bldcUart/buffer_reg[4][5]/D   |
+| sys_clk_pin        | sys_clk_pin       | bldcUart/bufferCount_reg[0]/D |
+| sys_clk_pin        | sys_clk_pin       | bldcUart/buffer_reg[0][4]/D   |
+| sys_clk_pin        | sys_clk_pin       | bldcUart/buffer_reg[0][5]/D   |
+| sys_clk_pin        | sys_clk_pin       | bldcUart/msgSign_reg/D        |
+| CLKOUT0            | CLKOUT0           | modBldc/counter_reg[1]/D      |
++--------------------+-------------------+-------------------------------+
