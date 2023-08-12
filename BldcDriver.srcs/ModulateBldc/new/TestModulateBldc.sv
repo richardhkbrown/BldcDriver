@@ -29,10 +29,10 @@ module TestModulateBldc();
     always #( CLK_PERIOD/2.0 )
     clk = ~clk;
   
-    reg [9:0] rpmData = 10'd0;
+    reg [9:0] rpmData = 10'd500;
 
     wire [15:0] test;
-    ModulateBldc #(.CLK_RATE(100000000),.MAXRPM(400)) modBldc( .clk(clk), .rpm(rpmData), .test(test) );
+    ModulateBldc #(.CLK_RATE(100000000),.MAXRPM(500)) modBldc( .clk(clk), .rpm(rpmData), .test(test) );
     
     wire [31:0] Q;
     wire TC;
@@ -51,6 +51,7 @@ module TestModulateBldc();
         
         #10;
         RST <= 1'b0;
+        
             
     end
     
@@ -73,7 +74,7 @@ module TestModulateBldc();
       .DEVICE("7SERIES"),          // Target Device: "7SERIES" 
       .DIRECTION("UP"),            // Counter direction, "UP" or "DOWN" 
       .RESET_UPON_TC("TRUE"),      // Reset counter upon terminal count, "TRUE" or "FALSE" 
-      .TC_VALUE(32'h00000005),     // Terminal count value
+      .TC_VALUE(32'h0000000F),     // Terminal count value
       .WIDTH_DATA(32)              // Counter output bus width, 1-48
    ) COUNTER_TC_MACRO_inst (
       .Q(Q),     // Counter output bus, width determined by WIDTH_DATA parameter

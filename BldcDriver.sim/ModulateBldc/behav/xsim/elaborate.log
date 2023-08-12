@@ -5,15 +5,15 @@ Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 33 for port 'Q' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/ModulateBldc.v:107]
-WARNING: [VRFC 10-3705] select index 33 into 'LEVEL_VALS' is out of bounds [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/ModulateBldc.v:83]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 33 for port 'Q' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/ModulateBldc.v:111]
+WARNING: [VRFC 10-3705] select index 32 into 'Q' is out of bounds [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/ModulateBldc.v:87]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module unisims_ver.DSP48E1(ADREG=0,DREG=0,MREG=0,US...
 Compiling module unimacro_ver.COUNTER_TC_MACRO(DEVICE="7SERIES...
-Compiling module xil_defaultlib.ModulateBldc(MAXRPM=400)
+Compiling module xil_defaultlib.ModulateBldc(MAXRPM=500)
 Compiling module unimacro_ver.COUNTER_TC_MACRO(DEVICE="7SERIES...
 Compiling module xil_defaultlib.TestModulateBldc
 Compiling module xil_defaultlib.glbl

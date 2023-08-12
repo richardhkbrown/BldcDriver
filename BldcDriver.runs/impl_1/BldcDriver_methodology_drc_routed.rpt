@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date         : Sat Aug  5 21:15:54 2023
+| Date         : Sat Aug 12 05:37:45 2023
 | Host         : DESKTOP-B5G40IL running 64-bit major release  (build 9200)
 | Command      : report_methodology -file BldcDriver_methodology_drc_routed.rpt -pb BldcDriver_methodology_drc_routed.pb -rpx BldcDriver_methodology_drc_routed.rpx
 | Design       : BldcDriver
@@ -23,12 +23,12 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 98
+             Violations found: 119
 +-----------+------------------+-------------------------------+------------+
 | Rule      | Severity         | Description                   | Violations |
 +-----------+------------------+-------------------------------+------------+
 | TIMING-17 | Critical Warning | Non-clocked sequential cell   | 34         |
-| TIMING-16 | Warning          | Large setup violation         | 46         |
+| TIMING-16 | Warning          | Large setup violation         | 67         |
 | TIMING-18 | Warning          | Missing input or output delay | 18         |
 +-----------+------------------+-------------------------------+------------+
 
@@ -206,232 +206,337 @@ Related violations: <none>
 
 TIMING-16#1 Warning
 Large setup violation  
-There is a large setup violation of -1.007 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[4][5]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.176 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[0][0]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#2 Warning
 Large setup violation  
-There is a large setup violation of -1.027 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[4][4]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.216 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[0][4]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#3 Warning
 Large setup violation  
-There is a large setup violation of -1.043 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[4][0]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.358 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[0][1]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#4 Warning
 Large setup violation  
-There is a large setup violation of -1.055 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[1][0]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.532 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[0][5]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#5 Warning
 Large setup violation  
-There is a large setup violation of -1.055 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[1][5]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.605 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[0][3]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#6 Warning
 Large setup violation  
-There is a large setup violation of -1.055 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[1][6]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.623 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[0][2]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#7 Warning
 Large setup violation  
-There is a large setup violation of -1.055 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[2][0]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.623 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[3][2]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#8 Warning
 Large setup violation  
-There is a large setup violation of -1.055 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[2][5]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.623 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[3][4]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#9 Warning
 Large setup violation  
-There is a large setup violation of -1.055 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[2][6]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.643 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/msgSign_reg/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#10 Warning
 Large setup violation  
-There is a large setup violation of -1.077 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[0][6]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.707 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[0][6]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#11 Warning
 Large setup violation  
-There is a large setup violation of -1.077 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[0][7]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.707 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[0][7]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#12 Warning
 Large setup violation  
-There is a large setup violation of -1.137 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[1][3]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.719 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[3][3]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#13 Warning
 Large setup violation  
-There is a large setup violation of -1.137 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[2][3]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.719 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[3][5]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#14 Warning
 Large setup violation  
-There is a large setup violation of -1.292 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/bufferCount_reg[1]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.719 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[3][6]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#15 Warning
 Large setup violation  
-There is a large setup violation of -1.335 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[1][7]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.719 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[3][7]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#16 Warning
 Large setup violation  
-There is a large setup violation of -1.335 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[2][7]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.752 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[1][0]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#17 Warning
 Large setup violation  
-There is a large setup violation of -1.340 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[1][1]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.752 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[1][4]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#18 Warning
 Large setup violation  
-There is a large setup violation of -1.340 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[1][4]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.752 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[2][0]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#19 Warning
 Large setup violation  
-There is a large setup violation of -1.340 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[2][1]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.752 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[2][4]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#20 Warning
 Large setup violation  
-There is a large setup violation of -1.340 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[2][4]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.789 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/bufferCount_reg[2]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#21 Warning
 Large setup violation  
-There is a large setup violation of -1.440 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/bufferCount_reg[0]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.791 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[0][1]/R (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#22 Warning
 Large setup violation  
-There is a large setup violation of -1.479 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/bufferCount_reg[2]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.811 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[1][3]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#23 Warning
 Large setup violation  
-There is a large setup violation of -1.488 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[0][5]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.811 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[1][5]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#24 Warning
 Large setup violation  
-There is a large setup violation of -1.500 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/setType_reg/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.811 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[2][3]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#25 Warning
 Large setup violation  
-There is a large setup violation of -2.391 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[0][6]/R (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.811 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[2][5]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#26 Warning
 Large setup violation  
-There is a large setup violation of -2.391 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[0][7]/R (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.813 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[3][0]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#27 Warning
 Large setup violation  
-There is a large setup violation of -2.408 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[0][0]/R (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.813 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[3][1]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#28 Warning
 Large setup violation  
-There is a large setup violation of -2.408 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[0][1]/R (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.845 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[1][1]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#29 Warning
 Large setup violation  
-There is a large setup violation of -2.408 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[0][2]/R (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.845 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[2][1]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#30 Warning
 Large setup violation  
-There is a large setup violation of -2.408 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[0][3]/R (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.866 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[0][0]/R (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#31 Warning
 Large setup violation  
-There is a large setup violation of -2.969 ns between modPwm/COUNTER_TC_MACRO_inst/genblk1_0.DSP48E_BL/CLK (clocked by CLKOUT0) and modPwm/COUNTER_TC_MACRO_inst/genblk1_0.DSP48E_BL/OPMODE[0] (clocked by CLKOUT0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.909 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[4][5]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#32 Warning
 Large setup violation  
-There is a large setup violation of -2.969 ns between modPwm/COUNTER_TC_MACRO_inst/genblk1_0.DSP48E_BL/CLK (clocked by CLKOUT0) and modPwm/COUNTER_TC_MACRO_inst/genblk1_0.DSP48E_BL/OPMODE[5] (clocked by CLKOUT0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.952 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[0][2]/R (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#33 Warning
 Large setup violation  
-There is a large setup violation of -3.084 ns between modPwm/COUNTER_TC_MACRO_inst/genblk1_0.DSP48E_BL/CLK (clocked by CLKOUT0) and modPwm/COUNTER_TC_MACRO_inst/genblk1_0.DSP48E_BL/OPMODE[1] (clocked by CLKOUT0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.979 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[0][6]/R (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#34 Warning
 Large setup violation  
-There is a large setup violation of -4.980 ns between modPwm/COUNTER_TC_MACRO_inst/genblk1_0.DSP48E_BL/CLK (clocked by CLKOUT0) and modPwm/D_reg/D (clocked by CLKOUT0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.979 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[0][7]/R (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#35 Warning
 Large setup violation  
-There is a large setup violation of -6.017 ns between bldcUart/setData_reg[4]/C (clocked by sys_clk_pin) and bldcUart/msgBuffer_reg[3][3]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.017 ns between modBldc/absRpmLatch_reg[4]/C (clocked by sys_clk_pin) and modBldc/RST_reg/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#36 Warning
 Large setup violation  
-There is a large setup violation of -6.984 ns between bldcUart/setData_reg[4]/C (clocked by sys_clk_pin) and bldcUart/msgBuffer_reg[2][3]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.022 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[0][3]/R (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#37 Warning
 Large setup violation  
-There is a large setup violation of -7.002 ns between bldcUart/setData_reg[4]/C (clocked by sys_clk_pin) and bldcUart/msgBuffer_reg[3][2]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.034 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[1][2]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#38 Warning
 Large setup violation  
-There is a large setup violation of -7.145 ns between bldcUart/setData_reg[4]/C (clocked by sys_clk_pin) and bldcUart/msgBuffer_reg[3][0]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.034 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[1][6]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#39 Warning
 Large setup violation  
-There is a large setup violation of -7.266 ns between bldcUart/setData_reg[4]/C (clocked by sys_clk_pin) and bldcUart/msgBuffer_reg[2][2]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.034 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[2][2]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#40 Warning
 Large setup violation  
-There is a large setup violation of -7.275 ns between bldcUart/setData_reg[4]/C (clocked by sys_clk_pin) and bldcUart/msgBuffer_reg[4][3]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.034 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[2][6]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#41 Warning
 Large setup violation  
-There is a large setup violation of -7.349 ns between bldcUart/setData_reg[4]/C (clocked by sys_clk_pin) and bldcUart/msgBuffer_reg[3][1]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.055 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/bufferCount_reg[0]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#42 Warning
 Large setup violation  
-There is a large setup violation of -7.632 ns between bldcUart/setData_reg[4]/C (clocked by sys_clk_pin) and bldcUart/msgBuffer_reg[2][1]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.095 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[1][7]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#43 Warning
 Large setup violation  
-There is a large setup violation of -7.672 ns between bldcUart/setData_reg[4]/C (clocked by sys_clk_pin) and bldcUart/msgBuffer_reg[2][0]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.095 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[2][7]/CE (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#44 Warning
 Large setup violation  
-There is a large setup violation of -8.112 ns between bldcUart/setData_reg[4]/C (clocked by sys_clk_pin) and bldcUart/msgBuffer_reg[4][1]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.114 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/setType_reg/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#45 Warning
 Large setup violation  
-There is a large setup violation of -8.118 ns between bldcUart/setData_reg[4]/C (clocked by sys_clk_pin) and bldcUart/msgBuffer_reg[4][0]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.159 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[4][4]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#46 Warning
 Large setup violation  
-There is a large setup violation of -8.146 ns between bldcUart/setData_reg[4]/C (clocked by sys_clk_pin) and bldcUart/msgBuffer_reg[4][2]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.175 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/buffer_reg[4][0]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#47 Warning
+Large setup violation  
+There is a large setup violation of -2.189 ns between uin/FIFO_SYNC_MACRO_inst/genblk5_0.fifo_18_bl.fifo_18_bl/RDCLK (clocked by sys_clk_pin) and bldcUart/bufferCount_reg[1]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#48 Warning
+Large setup violation  
+There is a large setup violation of -3.243 ns between modPwm/COUNTER_TC_MACRO_inst/genblk1_0.DSP48E_BL/CLK (clocked by CLKOUT0) and modPwm/COUNTER_TC_MACRO_inst/genblk1_0.DSP48E_BL/OPMODE[0] (clocked by CLKOUT0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#49 Warning
+Large setup violation  
+There is a large setup violation of -3.243 ns between modPwm/COUNTER_TC_MACRO_inst/genblk1_0.DSP48E_BL/CLK (clocked by CLKOUT0) and modPwm/COUNTER_TC_MACRO_inst/genblk1_0.DSP48E_BL/OPMODE[5] (clocked by CLKOUT0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#50 Warning
+Large setup violation  
+There is a large setup violation of -3.362 ns between modPwm/COUNTER_TC_MACRO_inst/genblk1_0.DSP48E_BL/CLK (clocked by CLKOUT0) and modPwm/COUNTER_TC_MACRO_inst/genblk1_0.DSP48E_BL/OPMODE[1] (clocked by CLKOUT0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#51 Warning
+Large setup violation  
+There is a large setup violation of -3.642 ns between modBldc/absRpmLatch_reg[4]/C (clocked by sys_clk_pin) and modBldc/sequence_reg[3]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#52 Warning
+Large setup violation  
+There is a large setup violation of -3.669 ns between modBldc/absRpmLatch_reg[4]/C (clocked by sys_clk_pin) and modBldc/sequence_reg[0]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#53 Warning
+Large setup violation  
+There is a large setup violation of -3.671 ns between modBldc/absRpmLatch_reg[4]/C (clocked by sys_clk_pin) and modBldc/sequence_reg[1]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#54 Warning
+Large setup violation  
+There is a large setup violation of -3.911 ns between modBldc/absRpmLatch_reg[4]/C (clocked by sys_clk_pin) and modBldc/sequence_reg[2]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#55 Warning
+Large setup violation  
+There is a large setup violation of -4.719 ns between bldcUart/setData_reg[0]_rep__1/C (clocked by sys_clk_pin) and bldcUart/msgBuffer_reg[3][3]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#56 Warning
+Large setup violation  
+There is a large setup violation of -5.482 ns between bldcUart/setData_reg[0]_rep__1/C (clocked by sys_clk_pin) and bldcUart/msgBuffer_reg[3][2]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#57 Warning
+Large setup violation  
+There is a large setup violation of -5.510 ns between modPwm/COUNTER_TC_MACRO_inst/genblk1_0.DSP48E_BL/CLK (clocked by CLKOUT0) and modPwm/D_reg/D (clocked by CLKOUT0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#58 Warning
+Large setup violation  
+There is a large setup violation of -5.995 ns between bldcUart/setData_reg[0]_rep__1/C (clocked by sys_clk_pin) and bldcUart/msgBuffer_reg[3][1]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#59 Warning
+Large setup violation  
+There is a large setup violation of -6.445 ns between bldcUart/setData_reg[0]_rep__1/C (clocked by sys_clk_pin) and bldcUart/msgBuffer_reg[3][0]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#60 Warning
+Large setup violation  
+There is a large setup violation of -6.657 ns between bldcUart/setData_reg[0]_rep__1/C (clocked by sys_clk_pin) and bldcUart/msgBuffer_reg[2][3]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#61 Warning
+Large setup violation  
+There is a large setup violation of -7.020 ns between bldcUart/setData_reg[0]_rep__1/C (clocked by sys_clk_pin) and bldcUart/msgBuffer_reg[2][2]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#62 Warning
+Large setup violation  
+There is a large setup violation of -7.088 ns between bldcUart/setData_reg[0]_rep__1/C (clocked by sys_clk_pin) and bldcUart/msgBuffer_reg[2][1]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#63 Warning
+Large setup violation  
+There is a large setup violation of -7.614 ns between bldcUart/setData_reg[0]_rep__1/C (clocked by sys_clk_pin) and bldcUart/msgBuffer_reg[2][0]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#64 Warning
+Large setup violation  
+There is a large setup violation of -7.715 ns between bldcUart/setData_reg[0]_rep__1/C (clocked by sys_clk_pin) and bldcUart/msgBuffer_reg[4][3]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#65 Warning
+Large setup violation  
+There is a large setup violation of -8.358 ns between bldcUart/setData_reg[0]_rep__1/C (clocked by sys_clk_pin) and bldcUart/msgBuffer_reg[4][2]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#66 Warning
+Large setup violation  
+There is a large setup violation of -8.667 ns between bldcUart/setData_reg[0]_rep__1/C (clocked by sys_clk_pin) and bldcUart/msgBuffer_reg[4][1]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#67 Warning
+Large setup violation  
+There is a large setup violation of -8.702 ns between bldcUart/setData_reg[0]_rep__1/C (clocked by sys_clk_pin) and bldcUart/msgBuffer_reg[4][0]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-18#1 Warning

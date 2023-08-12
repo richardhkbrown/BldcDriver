@@ -57,8 +57,12 @@ module ModulateBldc
     wire [9:0] absRpm;
     assign absRpm = dir ? rpm :
                     -rpm;
+    reg [9:0] absRpmLatch = 0;
+    always @ ( posedge(clk) ) begin
+        absRpmLatch <= absRpm;
+    end
     always @ ( negedge(clk) ) begin
-        if ( Q >= LEVEL_VALS[absRpm[($clog2(MAXRPM+1)-1):0]] ) begin
+        if ( Q >= LEVEL_VALS[absRpmLatch[($clog2(MAXRPM+1)-1):0]] ) begin
             if ( !RST ) begin
                 RST <= 1'b1;
                 if ( dir ) begin
@@ -80,7 +84,14 @@ module ModulateBldc
         end
     end
     
-    assign test = LEVEL_VALS[absRpm[($clog2(MAXRPM+1)-1):0]][33-:16];
+    //assign test = Q[32-:16];//LEVEL_VALS[absRpm[($clog2(MAXRPM+1)-1):0]][32-:16];
+    assign test = sequence==0 ? 16'h000F :
+                  sequence==1 ? 16'h00F0 :
+                  sequence==2 ? 16'h00FF :
+                  sequence==3 ? 16'h0F00 :
+                  sequence==4 ? 16'h0F0F :
+                  sequence==5 ? 16'h0FF0 :
+                  16'hFFFF;
     
 // COUNTER_TC_MACRO : In order to incorporate this function into the design,
 //     Verilog      : the following instance declaration needs to be placed

@@ -1,63 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1691291397">
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1691839993">
   <File Type="ROUTE-PWR" Name="BldcDriver_power_routed.rpt"/>
   <File Type="PA-TCL" Name="BldcDriver.tcl"/>
   <File Type="ROUTE-PWR-SUM" Name="BldcDriver_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="BldcDriver_reports.tcl"/>
-  <File Type="BITSTR-MSK" Name="BldcDriver.msk"/>
-  <File Type="ROUTE-CLK" Name="BldcDriver_clock_utilization_routed.rpt"/>
-  <File Type="RDI-RDI" Name="BldcDriver.vdi"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="BldcDriver_bus_skew_postroute_physopted.pb"/>
-  <File Type="BG-BIT" Name="BldcDriver.bit"/>
-  <File Type="BG-DRC" Name="BldcDriver.drc"/>
-  <File Type="BG-BGN" Name="BldcDriver.bgn"/>
-  <File Type="BG-BIN" Name="BldcDriver.bin"/>
-  <File Type="BITSTR-RBT" Name="BldcDriver.rbt"/>
-  <File Type="BITSTR-NKY" Name="BldcDriver.nky"/>
-  <File Type="BITSTR-BMM" Name="BldcDriver_bd.bmm"/>
+  <File Type="OPT-RQA-PB" Name="BldcDriver_rqa_opted.pb"/>
   <File Type="BITSTR-MMI" Name="BldcDriver.mmi"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="BldcDriver_methodology_drc_routed.rpt"/>
-  <File Type="BITSTR-SYSDEF" Name="BldcDriver.sysdef"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="BldcDriver.ltx"/>
-  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="BldcDriver_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="BldcDriver_timing_summary_init.rpt"/>
+  <File Type="OPT-TIMING" Name="BldcDriver_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="BldcDriver_opt.dcp"/>
   <File Type="OPT-DRC" Name="BldcDriver_drc_opted.rpt"/>
   <File Type="OPT-HWDEF" Name="BldcDriver.hwdef"/>
+  <File Type="PWROPT-DCP" Name="BldcDriver_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="BldcDriver_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="BldcDriver_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="BldcDriver_placed.dcp"/>
   <File Type="PLACE-IO" Name="BldcDriver_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="BldcDriver_clock_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL" Name="BldcDriver_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL-PB" Name="BldcDriver_utilization_placed.pb"/>
   <File Type="PLACE-CTRL" Name="BldcDriver_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="BldcDriver_incremental_reuse_placed.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="BldcDriver_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BIN" Name="BldcDriver.bin"/>
+  <File Type="PLACE-TIMING" Name="BldcDriver_timing_summary_placed.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="BldcDriver_power_routed.rpx"/>
+  <File Type="PLACE-RQA-PB" Name="BldcDriver_rqa_placed.pb"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="BldcDriver_postplace_pwropt.dcp"/>
+  <File Type="BITSTR-MSK" Name="BldcDriver.msk"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="BldcDriver_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="BldcDriver_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="BldcDriver_drc_physopted.rpt"/>
+  <File Type="BITSTR-RBT" Name="BldcDriver.rbt"/>
+  <File Type="PHYSOPT-TIMING" Name="BldcDriver_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="BldcDriver_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="BldcDriver_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="BldcDriver_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="BldcDriver_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="BldcDriver_drc_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="BldcDriver_power_routed.rpx"/>
+  <File Type="ROUTE-DRC-RPX" Name="BldcDriver_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="BldcDriver_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="BldcDriver_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="BldcDriver_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-RQS-PB" Name="BldcDriver_rqs_routed.pb"/>
   <File Type="ROUTE-STATUS" Name="BldcDriver_route_status.rpt"/>
   <File Type="ROUTE-STATUS-PB" Name="BldcDriver_route_status.pb"/>
-  <File Type="ROUTE-DCP" Name="BldcDriver_routed.dcp"/>
-  <File Type="ROUTE-ERROR-DCP" Name="BldcDriver_routed_error.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="BldcDriver_routed_bb.dcp"/>
   <File Type="ROUTE-TIMINGSUMMARY" Name="BldcDriver_timing_summary_routed.rpt"/>
   <File Type="ROUTE-TIMING-PB" Name="BldcDriver_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMING-RPX" Name="BldcDriver_timing_summary_routed.rpx"/>
   <File Type="ROUTE-SIMILARITY" Name="BldcDriver_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="BldcDriver_clock_utilization_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW" Name="BldcDriver_bus_skew_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="BldcDriver_bus_skew_routed.pb"/>
   <File Type="ROUTE-BUS-SKEW-RPX" Name="BldcDriver_bus_skew_routed.rpx"/>
-  <File Type="OPT-DCP" Name="BldcDriver_opt.dcp"/>
-  <File Type="PLACE-DCP" Name="BldcDriver_placed.dcp"/>
-  <File Type="PWROPT-DCP" Name="BldcDriver_pwropt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="BldcDriver_postplace_pwropt.dcp"/>
-  <File Type="PHYSOPT-DCP" Name="BldcDriver_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="BldcDriver_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="BldcDriver_postroute_physopt_bb.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-TIMING" Name="BldcDriver_timing_summary_postroute_physopted.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="BldcDriver_timing_summary_postroute_physopted.pb"/>
   <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="BldcDriver_timing_summary_postroute_physopted.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="BldcDriver_bus_skew_postroute_physopted.rpt"/>
+  <File Type="BG-BIT" Name="BldcDriver.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="BldcDriver_bus_skew_postroute_physopted.pb"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="BldcDriver_bus_skew_postroute_physopted.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="BldcDriver_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="BldcDriver_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="BldcDriver_methodology_drc_routed.rpx"/>
+  <File Type="BITSTR-NKY" Name="BldcDriver.nky"/>
+  <File Type="BITSTR-BMM" Name="BldcDriver_bd.bmm"/>
   <File Type="PDI-FILE" Name="BldcDriver.pdi"/>
   <File Type="BOOT-PDI-FILE" Name="BldcDriver_soc.pdi"/>
   <File Type="PL-PDI-FILE" Name="BldcDriver_pld.pdi"/>
@@ -66,6 +73,13 @@
   <File Type="RNPI_FILE" Name="BldcDriver.rnpi"/>
   <File Type="NPI_FILE" Name="BldcDriver.npi"/>
   <File Type="RBD_FILE" Name="BldcDriver.rbd"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="BldcDriver.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="BldcDriver.sysdef"/>
+  <File Type="BG-BGN" Name="BldcDriver.bgn"/>
+  <File Type="BG-DRC" Name="BldcDriver.drc"/>
+  <File Type="RDI-RDI" Name="BldcDriver.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="ROUTE-RQS" Name="BldcDriver_routed.rqs"/>
   <File Type="POSTROUTE-PHYSOPT-RQS" Name="BldcDriver_postroute_physopted.rqs"/>
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
@@ -212,6 +226,5 @@
     <Step Id="route_design"/>
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
-    <Step Id="write_device_image"/>
   </Strategy>
 </GenRun>
