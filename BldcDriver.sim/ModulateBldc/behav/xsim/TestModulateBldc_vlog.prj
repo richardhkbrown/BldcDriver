@@ -1,0 +1,23 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../BldcDriver.srcs/sources_1/imports/Common/SegmentDisplay.v" \
+"../../../../BldcDriver.srcs/sources_1/imports/Common/SquareWave.v" \
+"../../../../BldcDriver.srcs/sources_1/new/BldcDriver.v" \
+"../../../../BldcDriver.srcs/sources_1/imports/Common/Debouncer.v" \
+"../../../../BldcDriver.srcs/sources_1/new/SetValue.v" \
+"../../../../BldcDriver.srcs/sources_1/imports/Common/UartIn.v" \
+"../../../../BldcDriver.srcs/sources_1/imports/Common/UartOut.v" \
+"../../../../BldcDriver.srcs/sources_1/new/BldcUart.v" \
+"../../../../BldcDriver.srcs/sources_1/new/BldcController.v" \
+"../../../../BldcDriver.srcs/sources_1/imports/Common/GhzPll.v" \
+"../../../../BldcDriver.srcs/sources_1/new/ModuatePwm.v" \
+"../../../../BldcDriver.srcs/sources_1/new/ModulateBldc.v" \
+
+sv xil_defaultlib  \
+"../../../../BldcDriver.srcs/ModulateBldc/new/TestModulateBldc.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

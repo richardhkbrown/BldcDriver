@@ -21,14 +21,13 @@
 
 
 module ModulatePwm
-#(parameter CLK_RATE = 100000000, parameter FREQUENCY=10000, parameter MAXAMP=256) (
+#(parameter [63:0] CLK_RATE = 100000000, parameter FREQUENCY=10000, parameter MAXAMP=256) (
     input clk,
     input [9:0] amp,
     output reg D
     );
     
-    localparam integer RESET_COUNT = $rtoi((1.0/FREQUENCY)/(1.0/CLK_RATE));
-    assign resetCount = RESET_COUNT;
+    localparam [63:0] RESET_COUNT = $rtoi((1.0/FREQUENCY)/(1.0/CLK_RATE));
     wire [31:0] Q;
     wire TC;
     wire CLK;
@@ -73,7 +72,7 @@ module ModulatePwm
       .DEVICE("7SERIES"),          // Target Device: "7SERIES" 
       .DIRECTION("UP"),            // Counter direction, "UP" or "DOWN" 
       .RESET_UPON_TC("TRUE"),      // Reset counter upon terminal count, "TRUE" or "FALSE" 
-      .TC_VALUE(RESET_COUNT),     // Terminal count value
+      .TC_VALUE(RESET_COUNT),      // Terminal count value
       .WIDTH_DATA(32)              // Counter output bus width, 1-48
    ) COUNTER_TC_MACRO_inst (
       .Q(Q),     // Counter output bus, width determined by WIDTH_DATA parameter
@@ -83,6 +82,6 @@ module ModulatePwm
       .RST(RST)  // 1-bit active high synchronous reset
    );
 
-   // End of COUNTER_TC_MACRO_inst instantiation 
+   // End of COUNTER_TC_MACRO_inst instantiation
 
 endmodule

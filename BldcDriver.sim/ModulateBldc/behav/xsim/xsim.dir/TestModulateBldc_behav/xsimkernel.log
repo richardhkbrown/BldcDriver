@@ -1,0 +1,4 @@
+Running: xsim.dir/TestModulateBldc_behav/xsimk.exe -simmode gui -wdb TestModulateBldc_behav.wdb -simrunnum 0 -socket 54810
+Design successfully loaded
+Design Loading Memory Usage: 7592 KB (Peak: 7592 KB)
+Design Loading CPU Usage: 31 ms

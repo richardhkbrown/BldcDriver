@@ -1,0 +1,18 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Fri Aug  4 18:53:07 2023
+# Process ID: 16560
+# Current directory: C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8304 C:\Users\DurkusMaximus\Desktop\Xilinx\BldcDriver\BldcDriver.xpr
+# Log file: C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/vivado.log
+# Journal file: C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver\vivado.jou
+# Running On: DESKTOP-B5G40IL, OS: Windows, CPU Frequency: 1992 MHz, CPU Physical cores: 4, Host memory: 8458 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.xpr
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1

@@ -108,6 +108,6 @@ output JA
     ModulatePwm #(.CLK_RATE(1000000000),.FREQUENCY(20000),.MAXAMP(100)) modPwm( .clk(clk1Ghz), .amp(ampData), .D(D) );
     assign JA = D;
     
-    ModulateBldc modBldc( .clk(clk1Ghz), .rpm(rpmData), .test(led) );
+    ModulateBldc #(.CLK_RATE(100000000),.MAXRPM(400)) modBldc( .clk(clk), .rpm(rpmData), .test(led) );
    
 endmodule
