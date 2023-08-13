@@ -33,8 +33,10 @@ input btnR,
 input btnD,
 input RsRx,
 output [15:0] led,
-output JA
+output [5:0] JA
 );
+
+    // User interface implementation
         
     wire [3:0] decimals;
     wire [9:0] digits;
@@ -100,14 +102,42 @@ output JA
                     ampData;
     assign decimals = setType==1 ? {4'b0000} :
                       {4'b1111};
-                 
+    
+    // Output implementation
+    
     wire clk1Ghz;
     GhzPll ghzPll( .clk(clk), .clk1Ghz(clk1Ghz) );
     
     wire D;
     ModulatePwm #(.CLK_RATE(1000000000),.FREQUENCY(20000),.MAXAMP(100)) modPwm( .clk(clk1Ghz), .amp(ampData), .D(D) );
-    assign JA = D;
     
-    ModulateBldc #(.CLK_RATE(100000000),.MAXRPM(400)) modBldc( .clk(clk), .rpm(rpmData), .test(led) );
-   
+    wire [$clog2(6):0] seq;
+    ModulateBldc #(.CLK_RATE(100000000),.MAXRPM(400)) modBldc( .clk(clk), .rpm(rpmData), .seq(seq) );
+    
+    // 2 L298N H-Bridge drivers 
+    reg [5:0] hBus = 9'b00000;
+    always @ ( posedge( clk ) ) begin
+    
+        case(seq)
+        
+            0:
+                hBus = {D   ,1'b1,!D  ,1'b1,1'b0,1'b0};
+            1:
+                hBus = {D   ,1'b1,1'b0,1'b0,!D  ,1'b1};
+            2:
+                hBus = {1'b0,1'b0,D   ,1'b1,!D  ,1'b1};
+            3:
+                hBus = {!D  ,1'b1,D   ,1'b1,1'b0,1'b0};
+            4:
+                hBus = {!D  ,1'b1,1'b0,1'b0,D   ,1'b1};
+            5:
+                hBus = {1'b0,1'b0,!D  ,1'b1,D   ,1'b1};
+                
+        endcase
+    end
+    assign JA = hBus;
+    
+    assign led[15-:8] = {8{D}};
+    assign led[0+:6] = hBus;
+    
 endmodule

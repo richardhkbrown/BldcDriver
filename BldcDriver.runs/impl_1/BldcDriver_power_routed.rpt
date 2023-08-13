@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date             : Sat Aug 12 05:37:46 2023
+| Date             : Sat Aug 12 19:53:46 2023
 | Host             : DESKTOP-B5G40IL running 64-bit major release  (build 9200)
 | Command          : report_power -file BldcDriver_power_routed.rpt -pb BldcDriver_power_summary_routed.pb -rpx BldcDriver_power_routed.rpx
 | Design           : BldcDriver
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.487        |
+| Total On-Chip Power (W)  | 0.475        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.414        |
+| Dynamic (W)              | 0.402        |
 | Device Static (W)        | 0.073        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 82.6         |
@@ -52,20 +52,20 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.007 |        5 |       --- |             --- |
-| Slice Logic    |     0.011 |     3548 |       --- |             --- |
-|   LUT as Logic |     0.011 |     2237 |     20800 |           10.75 |
+| Clocks         |     0.008 |        5 |       --- |             --- |
+| Slice Logic    |     0.011 |     3566 |       --- |             --- |
+|   LUT as Logic |     0.010 |     2226 |     20800 |           10.70 |
 |   CARRY4       |    <0.001 |      343 |      8150 |            4.21 |
-|   Register     |    <0.001 |      349 |     41600 |            0.84 |
+|   Register     |    <0.001 |      369 |     41600 |            0.89 |
 |   F7/F8 Muxes  |    <0.001 |      121 |     32600 |            0.37 |
 |   Others       |     0.000 |       31 |       --- |             --- |
-| Signals        |     0.013 |     1890 |       --- |             --- |
+| Signals        |     0.013 |     1901 |       --- |             --- |
 | Block RAM      |    <0.001 |        1 |        50 |            2.00 |
 | PLL            |     0.101 |        1 |         5 |           20.00 |
 | DSPs           |    <0.001 |        2 |        90 |            2.22 |
-| I/O            |     0.282 |       37 |       106 |           34.91 |
+| I/O            |     0.269 |       42 |       106 |           39.62 |
 | Static Power   |     0.073 |          |           |                 |
-| Total          |     0.487 |          |           |                 |
+| Total          |     0.475 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,9 +75,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.047 |       0.037 |      0.010 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.049 |       0.038 |      0.010 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.076 |       0.063 |      0.013 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.081 |       0.080 |      0.001 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.077 |       0.076 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -146,12 +146,12 @@ Table of Contents
 +---------------------------+-----------+
 | Name                      | Power (W) |
 +---------------------------+-----------+
-| BldcDriver                |     0.414 |
+| BldcDriver                |     0.402 |
 |   bldcUart                |     0.018 |
 |   dbc                     |     0.001 |
 |   ghzPll                  |     0.101 |
-|   modPwm                  |     0.005 |
-|     COUNTER_TC_MACRO_inst |     0.003 |
+|   modPwm                  |     0.006 |
+|     COUNTER_TC_MACRO_inst |     0.001 |
 |   segDisp                 |     0.004 |
 +---------------------------+-----------+
 

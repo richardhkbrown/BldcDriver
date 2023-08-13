@@ -31,8 +31,8 @@ module TestModulateBldc();
   
     reg [9:0] rpmData = 10'd500;
 
-    wire [15:0] test;
-    ModulateBldc #(.CLK_RATE(100000000),.MAXRPM(500)) modBldc( .clk(clk), .rpm(rpmData), .test(test) );
+//    wire [15:0] test;
+//    ModulateBldc #(.CLK_RATE(100000000),.MAXRPM(500)) modBldc( .clk(clk), .rpm(rpmData), .test(test) );
     
     wire [31:0] Q;
     wire TC;

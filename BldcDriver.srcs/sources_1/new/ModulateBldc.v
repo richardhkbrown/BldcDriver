@@ -24,7 +24,7 @@ module ModulateBldc
 #(parameter [63:0] CLK_RATE = 100000000, parameter MAXRPM=256) (
     input clk,
     input signed [9:0] rpm,
-    output [15:0] test
+    output reg [$clog2(6):0] seq = 0 // changes on negedge clk
     );
 
     localparam integer RESET_WIDTH = $clog2(60*CLK_RATE);
@@ -51,7 +51,6 @@ module ModulateBldc
         end
     endgenerate
 
-    reg [$clog2(6):0] sequence = 0;
     wire dir;
     assign dir = rpm > 0;
     wire [9:0] absRpm;
@@ -66,16 +65,16 @@ module ModulateBldc
             if ( !RST ) begin
                 RST <= 1'b1;
                 if ( dir ) begin
-                    if ( sequence < 5 ) begin
-                        sequence <= sequence + 1;
+                    if ( seq < 5 ) begin
+                        seq <= seq + 1;
                     end else begin
-                        sequence <= 0;
+                        seq <= 0;
                     end
                 end else begin
-                    if ( sequence > 0 ) begin
-                        sequence <= sequence - 1;
+                    if ( seq > 0 ) begin
+                        seq <= seq - 1;
                     end else begin
-                        sequence <= 5;
+                        seq <= 5;
                     end 
                 end
             end
@@ -83,15 +82,6 @@ module ModulateBldc
             RST <= 0;
         end
     end
-    
-    //assign test = Q[32-:16];//LEVEL_VALS[absRpm[($clog2(MAXRPM+1)-1):0]][32-:16];
-    assign test = sequence==0 ? 16'h000F :
-                  sequence==1 ? 16'h00F0 :
-                  sequence==2 ? 16'h00FF :
-                  sequence==3 ? 16'h0F00 :
-                  sequence==4 ? 16'h0F0F :
-                  sequence==5 ? 16'h0FF0 :
-                  16'hFFFF;
     
 // COUNTER_TC_MACRO : In order to incorporate this function into the design,
 //     Verilog      : the following instance declaration needs to be placed

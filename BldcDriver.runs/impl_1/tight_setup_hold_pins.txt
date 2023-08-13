@@ -1,15 +1,27 @@
 +====================+===================+===============================+
 | Launch Setup Clock | Launch Hold Clock | Pin                           |
 +====================+===================+===============================+
+| CLKOUT0            | sys_clk_pin       | modPwm/D_reg_lopt_replica_4/D |
 | CLKOUT0            | sys_clk_pin       | modPwm/D_reg/D                |
-| sys_clk_pin        | sys_clk_pin       | modBldc/sequence_reg[2]/D     |
-| sys_clk_pin        | sys_clk_pin       | modBldc/sequence_reg[1]/D     |
-| sys_clk_pin        | sys_clk_pin       | modBldc/sequence_reg[0]/D     |
-| sys_clk_pin        | sys_clk_pin       | modBldc/sequence_reg[3]/D     |
-| sys_clk_pin        | sys_clk_pin       | bldcUart/bufferCount_reg[1]/D |
-| sys_clk_pin        | sys_clk_pin       | bldcUart/bufferCount_reg[0]/D |
+| CLKOUT0            | sys_clk_pin       | modPwm/D_reg_lopt_replica_8/D |
+| CLKOUT0            | sys_clk_pin       | modPwm/D_reg_lopt_replica_7/D |
+| CLKOUT0            | sys_clk_pin       | modPwm/D_reg_lopt_replica_2/D |
+| CLKOUT0            | sys_clk_pin       | modPwm/D_reg_lopt_replica_6/D |
+| CLKOUT0            | sys_clk_pin       | modPwm/D_reg_lopt_replica_3/D |
+| CLKOUT0            | sys_clk_pin       | modPwm/D_reg_lopt_replica_5/D |
+| CLKOUT0            | sys_clk_pin       | modPwm/D_reg_lopt_replica/D   |
+| sys_clk_pin        | sys_clk_pin       | modBldc/seq_reg[2]/D          |
+| sys_clk_pin        | sys_clk_pin       | modBldc/seq_reg[1]/D          |
+| sys_clk_pin        | sys_clk_pin       | modBldc/seq_reg[3]/D          |
+| sys_clk_pin        | sys_clk_pin       | modBldc/seq_reg[0]/D          |
 | sys_clk_pin        | sys_clk_pin       | bldcUart/buffer_reg[4][5]/D   |
+| sys_clk_pin        | sys_clk_pin       | bldcUart/bufferCount_reg[0]/D |
 | sys_clk_pin        | sys_clk_pin       | bldcUart/buffer_reg[4][0]/D   |
-| sys_clk_pin        | sys_clk_pin       | bldcUart/msgSign_reg/D        |
+| sys_clk_pin        | sys_clk_pin       | bldcUart/buffer_reg[4][4]/D   |
+| sys_clk_pin        | sys_clk_pin       | bldcUart/bufferCount_reg[1]/D |
+| sys_clk_pin        | sys_clk_pin       | bldcUart/bufferCount_reg[2]/D |
+| sys_clk_pin        | sys_clk_pin       | bldcUart/setType_reg/D        |
+| sys_clk_pin        | sys_clk_pin       | bldcUart/buffer_reg[0][4]/D   |
 | sys_clk_pin        | sys_clk_pin       | bldcUart/buffer_reg[0][5]/D   |
+| sys_clk_pin        | sys_clk_pin       | bldcUart/msgSign_reg/D        |
 +--------------------+-------------------+-------------------------------+

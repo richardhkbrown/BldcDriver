@@ -24,7 +24,7 @@ module ModulatePwm
 #(parameter [63:0] CLK_RATE = 100000000, parameter FREQUENCY=10000, parameter MAXAMP=256) (
     input clk,
     input [9:0] amp,
-    output reg D
+    output reg D // changes on negedge clk
     );
     
     localparam [63:0] RESET_COUNT = $rtoi((1.0/FREQUENCY)/(1.0/CLK_RATE));
@@ -45,7 +45,7 @@ module ModulatePwm
         end
     endgenerate
         
-    always @ ( posedge(clk) ) begin
+    always @ ( negedge(clk) ) begin
         if ( Q <= LEVEL_VALS[amp[($clog2(MAXAMP+1)-1):0]] ) begin
             D <= 1'b1;
         end else begin
