@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date         : Sat Aug 12 19:52:37 2023
+| Date         : Sat Aug 12 22:20:04 2023
 | Host         : DESKTOP-B5G40IL running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file BldcDriver_control_sets_placed.rpt
 | Design       : BldcDriver
@@ -73,43 +73,43 @@ Table of Contents
 +-------------------------+----------------------------------------+----------------------------------+------------------+----------------+--------------+
 |       Clock Signal      |              Enable Signal             |         Set/Reset Signal         | Slice Load Count | Bel Load Count | Bels / Slice |
 +-------------------------+----------------------------------------+----------------------------------+------------------+----------------+--------------+
-|  clk_IBUF_BUFG          | uin/p_0_in__0[1]                       |                                  |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG          | uin/p_0_in__0[4]                       |                                  |                1 |              1 |         1.00 |
 | ~segDisp/squareWare/CLK |                                        | segDisp/segReg[6]_i_1_n_0        |                1 |              1 |         1.00 |
 |  clk_IBUF_BUFG          | uin/DI[0]_i_1_n_0                      |                                  |                1 |              1 |         1.00 |
 |  clk_IBUF_BUFG          | uin/p_0_in__0[6]                       |                                  |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG          | uin/p_0_in__0[5]                       |                                  |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG          | uin/p_0_in__0[4]                       |                                  |                1 |              1 |         1.00 |
 |  clk_IBUF_BUFG          | uin/p_0_in__0[7]                       |                                  |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG          | uin/p_0_in__0[1]                       |                                  |                1 |              1 |         1.00 |
 |  clk_IBUF_BUFG          | uin/p_0_in__0[2]                       |                                  |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG          | uin/p_0_in__0[5]                       |                                  |                1 |              1 |         1.00 |
 |  clk_IBUF_BUFG          | uin/p_0_in__0[3]                       |                                  |                1 |              1 |         1.00 |
 |  clk_IBUF_BUFG          | uout/FIFO_SYNC_MACRO_inst/state_reg[4] |                                  |                1 |              1 |         1.00 |
 |  segDisp/squareWare/CLK |                                        |                                  |                1 |              2 |         2.00 |
-|  clk_IBUF_BUFG          | uin/sel                                |                                  |                1 |              4 |         4.00 |
 |  clk_IBUF_BUFG          | uin/state0                             |                                  |                2 |              4 |         2.00 |
-| ~clk_IBUF_BUFG          | bldcUart/msgBuffer[6][4]_i_1_n_0       |                                  |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG          | uin/sel                                |                                  |                1 |              4 |         4.00 |
 | ~segDisp/squareWare/CLK |                                        |                                  |                2 |              5 |         2.50 |
+|  dbc/squareWare/out     |                                        |                                  |                5 |              5 |         1.00 |
+| ~clk_IBUF_BUFG          | bldcUart/btnsReg[4]_i_1_n_0            |                                  |                4 |              5 |         1.25 |
 |  clk_IBUF_BUFG          | uout/FIFO_SYNC_MACRO_inst/E[0]         |                                  |                2 |              5 |         2.50 |
 |  clk_IBUF_BUFG          | uout/sel                               |                                  |                2 |              5 |         2.50 |
-| ~clk_IBUF_BUFG          | bldcUart/btnsReg[4]_i_1_n_0            |                                  |                4 |              5 |         1.25 |
-|  dbc/squareWare/out     |                                        |                                  |                5 |              5 |         1.00 |
+| ~clk_IBUF_BUFG          | bldcUart/msgBuffer[6][4]_i_1_n_0       |                                  |                2 |              5 |         2.50 |
 | ~clk_IBUF_BUFG          | bldcUart/state_3                       |                                  |                4 |              5 |         1.25 |
 | ~clk_IBUF_BUFG          | bldcUart/buffer[0][7]_i_2_n_0          | bldcUart/buffer[0][7]_i_1_n_0    |                1 |              6 |         6.00 |
 | ~segDisp/squareWare/CLK |                                        | segDisp/segReg[5]_i_1_n_0        |                5 |              6 |         1.20 |
-| ~clk_IBUF_BUFG          | bldcUart/asciiVal[7]_i_1_n_0           |                                  |                4 |              8 |         2.00 |
-| ~clk_IBUF_BUFG          | bldcUart/msgBuffer[1][7]_i_2_n_0       | bldcUart/msgBuffer[1][7]_i_1_n_0 |                2 |              8 |         4.00 |
 | ~clk_IBUF_BUFG          | bldcUart/msgBuffer[0][7]_i_1_n_0       | bldcUart/msgBuffer[1][7]_i_1_n_0 |                5 |              8 |         1.60 |
-| ~clk_IBUF_BUFG          | bldcUart/buffer[3][7]_i_2_n_0          | bldcUart/buffer[3][7]_i_1_n_0    |                2 |              8 |         4.00 |
 | ~clk_IBUF_BUFG          | bldcUart/msgBuffer[2][7]_i_1_n_0       |                                  |                8 |              8 |         1.00 |
+| ~clk_IBUF_BUFG          | bldcUart/asciiVal[7]_i_1_n_0           |                                  |                4 |              8 |         2.00 |
+| ~clk_IBUF_BUFG          | bldcUart/buffer[3][7]_i_2_n_0          | bldcUart/buffer[3][7]_i_1_n_0    |                2 |              8 |         4.00 |
+| ~clk_IBUF_BUFG          | bldcUart/msgBuffer[1][7]_i_2_n_0       | bldcUart/msgBuffer[1][7]_i_1_n_0 |                2 |              8 |         4.00 |
 | ~ghzPll/clk1Ghz         |                                        |                                  |                4 |              9 |         2.25 |
-|  clk_IBUF_BUFG          | bldcUart/E[0]                          |                                  |                5 |             10 |         2.00 |
 |  clk_IBUF_BUFG          | bldcUart/setType_reg_0[0]              |                                  |                5 |             10 |         2.00 |
+|  clk_IBUF_BUFG          | bldcUart/E[0]                          |                                  |                5 |             10 |         2.00 |
 | ~clk_IBUF_BUFG          | bldcUart/rpmData[9]_i_1__0_n_0         |                                  |                6 |             10 |         1.67 |
 | ~clk_IBUF_BUFG          | bldcUart/ampData[9]_i_1_n_0            |                                  |                6 |             10 |         1.67 |
-| ~clk_IBUF_BUFG          | bldcUart/msgBuffer[4][3]_i_1_n_0       |                                  |                8 |             11 |         1.38 |
 | ~clk_IBUF_BUFG          | bldcUart/setData1024[10]_i_1_n_0       |                                  |                9 |             11 |         1.22 |
+| ~clk_IBUF_BUFG          | bldcUart/msgBuffer[4][3]_i_1_n_0       |                                  |                8 |             11 |         1.38 |
 |  clk_IBUF_BUFG          | modBldc/E[0]                           |                                  |                7 |             12 |         1.71 |
-| ~clk_IBUF_BUFG          |                                        | uout/counter[0]_i_1__1_n_0       |                4 |             14 |         3.50 |
 | ~clk_IBUF_BUFG          |                                        | uin/counter[0]_i_1__2_n_0        |                4 |             14 |         3.50 |
+| ~clk_IBUF_BUFG          |                                        | uout/counter[0]_i_1__1_n_0       |                4 |             14 |         3.50 |
 | ~dbc/squareWare/out     |                                        |                                  |                4 |             15 |         3.75 |
 | ~clk_IBUF_BUFG          | bldcUart/buffer[1][7]_i_2_n_0          | bldcUart/buffer[1][7]_i_1_n_0    |                7 |             16 |         2.29 |
 |  clk_IBUF_BUFG          |                                        |                                  |               12 |             16 |         1.33 |
