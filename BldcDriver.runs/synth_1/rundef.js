@@ -24,7 +24,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log BldcDriver.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source BldcDriver.tcl" );
+         "-log Proto.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Proto.tcl" );
 
 
 

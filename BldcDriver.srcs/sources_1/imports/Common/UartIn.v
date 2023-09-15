@@ -22,16 +22,17 @@
 
 module UartIn
 #(parameter BAUD = 9600) (
-    input clk,
+    input clk_48mhz,
     input RsRx,
     output dataAvail,
     input req,
     output reg ack = 0,
-    output [7:0] dataOut
+    output [7:0] dataOut,
+    output [3:0] debug
     );
     
     // Creat 1 cycle counter
-    localparam integer CLK_RATE = 100000000; // 100 MHz Artix7
+    localparam integer CLK_RATE = 48000000; // 48 MHz
     localparam real PERIOD = CLK_RATE/BAUD;
     localparam integer BITS_NEEDED = $clog2($rtoi(PERIOD+1));
     localparam integer HALF_COUNT = $rtoi(0.5*PERIOD);
@@ -55,90 +56,72 @@ module UartIn
     reg WREN = 0;
     
     // Wire assignment
-    assign CLK = clk;
+    assign CLK = clk_48mhz;
     reg [($clog2(10+1)-1):0] fifoResetCount = 10;
-    assign dataAvail = !EMPTY && (fifoResetCount==0);
+    assign dataAvail = !EMPTY && ( fifoResetCount==0 );
     assign dataOut = DO;
     
     // Reset fifo
-    always @ (posedge(CLK)) begin
-        RST <= (fifoResetCount>=4);
+    always @ ( posedge(CLK) ) begin
+        RST <= ( fifoResetCount>=4 );
         if ( fifoResetCount>0 ) begin
             fifoResetCount <= fifoResetCount - 1;
         end
     end
     
-    // Byte reader
-    reg [($clog2(11+1)-1):0] state = 0; // 11 is max state
-    always @ (posedge(CLK)) begin
-    
-        case(state)
-        
-            0:
-                if (!RsRx && (fifoResetCount==0)) begin
-                    state <= 1;
-                end
-                
-            1:
-                if (counter==HALF_COUNT) begin
-                    state <= state + 1;
-                end
-                
-            2,3,4,5,6,7,8,9:
-                begin
-                    if (counter==HALF_COUNT) begin
-                        DI[state-2] <= RsRx;
-                        state <= state + 1;
-                    end
-                end
-                
-            10:
-                if (counter==HALF_COUNT) begin
-                    state <= 11;
-                end
-                
-            11:
-                state <= 0;
-                
-        endcase
-    
-    end
-    
-    // Increment counter
-    always @ (negedge(CLK)) begin
-    
+    // State machines
+    reg [($clog2(10+1)-1):0] state = 0; // 10 is max state
+    reg [($clog2(2+1)-1):0] reqState = 0; // 2 is max
+    always @ ( posedge(clk_48mhz) ) begin
+
+        // Increment counter
         if ( state!=0 && counter<RESET_COUNT ) begin
             counter <= counter+1;
         end else begin
             counter <= 0;
         end
         
-        if ( state==11 ) begin
-            if (!FULL) begin
-                WREN <= 1;
-            end
-        end else begin
-            WREN <= 0;
-        end
-    
-    end
-    
-    // Request Handler
-    reg [($clog2(2+1)-1):0] reqState = 0;
-    always @ (negedge(CLK)) begin
-     
-        case(reqState)
+        // Parallelize  ans save to FIFO
+        case ( state )
+        
+            0: // Sync bit (assert low)
+                begin
+                    if ( !RsRx && ( fifoResetCount==0 ) ) begin
+                        state <= 1;
+                    end
+                    WREN <= 0;
+                end
+                
+            1,2,3,4,5,6,7,8,9,10:
+                if ( counter==HALF_COUNT ) begin
+                    if ( state==1 ) begin
+                        state <= state+1; // start bit
+                    end else if ( state>=2 && state<=9 ) begin
+                        DI[state-2] <= RsRx;
+                        state <= state+1;
+                    end else begin
+                        if ( RsRx ) begin
+                            state <= 0;
+                            
+                            // Write to FIFO
+                            if ( !FULL ) begin
+                                WREN <= 1;
+                            end
+                        end
+                    end
+                end
+                
+            default:
+                begin
+                end
+                
+        endcase
+
+        // External FIFO read request handler
+        case( reqState )
         
             0:
-                if ( !req ) begin
-                    // Prevent lockup
-                    if ( RDEN ) begin
-                        RDEN <= 0;
-                    end
-                    if ( ack ) begin
-                        ack <= 0;
-                    end
-                end else if ( req && dataAvail ) begin
+                if ( req && dataAvail ) begin
                     RDEN <= 1;
                     reqState <= 1;
                 end
@@ -155,15 +138,13 @@ module UartIn
                     ack <= 0;
                     reqState <= 0;
                 end
-            
-            default:
-                // Prevent lockup
-                reqState <= 3'b010;
-               
+                
         endcase
-        
+       
     end
     
+    assign debug = state[3:0];
+
 // FIFO_SYNC_MACRO : In order to incorporate this function into the design,
 //     Verilog      : the following instance declaration needs to be placed
 //    instance      : in the body of the design code.  The instance name

@@ -41,4 +41,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log BldcDriver.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source BldcDriver.tcl
+EAStep vivado -log Proto.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Proto.tcl

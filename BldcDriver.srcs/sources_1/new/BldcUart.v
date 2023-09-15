@@ -22,7 +22,7 @@
 
 module BldcUart
 #(parameter MAX_AMP = 100, parameter MAX_RPM = 400) (
-    input clk,
+    input clk_48mhz,
     input [4:0] btns, // {btnC,btnU,btnL,btnR,btnD}
     input dataAvail,
     input [7:0] inData,
@@ -52,7 +52,7 @@ module BldcUart
                        asciiVal==56 ? 8 :
                        asciiVal==57 ? 9 :
                        0;
-                       
+
     // setData in ascii
     reg signed [10:0] setData1024 = 0;
     wire [7:0] SET_DATA_TYPE;
@@ -72,6 +72,7 @@ module BldcUart
                           setData%1000>=200 || setData%1000<=-200 ? 50 :
                           setData%1000>=100 || setData%1000<=-100 ? 49 :
                           48;
+                          
     wire [7:0] SET_DATA_10;
     assign SET_DATA_10 = setData%100>=90 || setData%100<=-90 ? 57 :
                          setData%100>=80 || setData%100<=-80 ? 56 :
@@ -120,9 +121,10 @@ module BldcUart
     reg signed [9:0] rpmData = 0;
 
     reg [($clog2(19+1)-1):0] state = 0;
-    always @ (negedge(clk)) begin
+    //always @ (negedge(clk)) begin
+    always @ ( posedge(clk_48mhz) ) begin
     
-        case(state)
+        case ( state )
         
             // Wait for and process keypress from uart
             0:
@@ -320,38 +322,38 @@ module BldcUart
                 
             10: // {btnC,btnU,btnL,btnR,btnD} handle button press
                 begin
-                    if ( btnsReg[3] ) begin
-                        if ( setType==0 ) begin
-                            setData1024 <= ampData + 1;
-                        end else begin
-                            setData1024 <= ampData;
-                        end
-                        setType <= 0;
-                    end else if ( btnsReg[2] ) begin
-                        if ( setType==1 ) begin
-                            setData1024 <= rpmData - 1;
-                        end else begin
-                            setData1024 <= rpmData;
-                        end
-                        setType <= 1;
-                    end else if ( btnsReg[1] ) begin
-                        if ( setType==1 ) begin
-                            setData1024 <= rpmData + 1;
-                        end else begin
-                            setData1024 <= rpmData;
-                        end
-                        setType <= 1;
-                   end else if ( btnsReg[0] ) begin
-                        if ( setType==0 ) begin
-                            setData1024 <= ampData - 1;
-                        end else begin
-                            setData1024 <= ampData;
-                        end
-                        setType <= 0;
-                    end else if ( btnsReg[4] ) begin // reset amp
-                        setType <= 0;
-                        setData1024 <= $rtoi(0.5*MAX_AMP);
-                    end
+//                    if ( btnsReg[3] ) begin
+//                        if ( setType==0 ) begin
+//                            setData1024 <= ampData + 1;
+//                        end else begin
+//                            setData1024 <= ampData;
+//                        end
+//                        setType <= 0;
+//                    end else if ( btnsReg[2] ) begin
+//                        if ( setType==1 ) begin
+//                            setData1024 <= rpmData - 1;
+//                        end else begin
+//                            setData1024 <= rpmData;
+//                        end
+//                        setType <= 1;
+//                    end else if ( btnsReg[1] ) begin
+//                        if ( setType==1 ) begin
+//                            setData1024 <= rpmData + 1;
+//                        end else begin
+//                            setData1024 <= rpmData;
+//                        end
+//                        setType <= 1;
+//                   end else if ( btnsReg[0] ) begin
+//                        if ( setType==0 ) begin
+//                            setData1024 <= ampData - 1;
+//                        end else begin
+//                            setData1024 <= ampData;
+//                        end
+//                        setType <= 0;
+//                    end else if ( btnsReg[4] ) begin // reset amp
+//                        setType <= 0;
+//                        setData1024 <= $rtoi(0.5*MAX_AMP);
+//                    end
                     state <= 11;
                 end
                 
@@ -381,7 +383,7 @@ module BldcUart
                     end
                     state <= 13;
                 end
-                
+                                
             13: // send out value through uart
                 begin
                     msgBuffer[6] <= SET_DATA_TYPE;
@@ -442,5 +444,5 @@ module BldcUart
         endcase
         
     end
-        
+    
 endmodule

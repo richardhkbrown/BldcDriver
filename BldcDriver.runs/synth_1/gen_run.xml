@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1691900225" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/BldcDriver.dcp">
-  <File Type="PA-TCL" Name="BldcDriver.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="BldcDriver_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="BldcDriver_reports.tcl"/>
-  <File Type="RDS-RDS" Name="BldcDriver.vds"/>
-  <File Type="RDS-UTIL" Name="BldcDriver_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="BldcDriver_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="BldcDriver.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="BldcDriver_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="BldcDriver_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1694747989" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/BldcDriver.dcp">
+  <File Type="PA-TCL" Name="Proto.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="Proto_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="Proto_reports.tcl"/>
+  <File Type="RDS-RDS" Name="Proto.vds"/>
+  <File Type="RDS-UTIL" Name="Proto_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="Proto_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="Proto.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="Proto_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="Proto_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/Common/SegmentDisplay.v">
@@ -45,13 +45,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/SetValue.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/imports/Common/UartIn.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../Common/UartIn.v"/>
@@ -71,13 +64,6 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/BldcUart.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/BldcController.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -107,14 +93,27 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/PwmTest.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Proto.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="BldcDriver"/>
+      <Option Name="TopModule" Val="Proto"/>
     </Config>
   </FileSet>
-  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
-    <Filter Type="Constrs"/>
-    <File Path="$PSRCDIR/constrs_1/imports/digilent-xdc-master/Basys-3-Master.xdc">
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/Proto" RelGenDir="$PGENDIR/Proto">
+    <File Path="$PSRCDIR/Proto/imports/digilent-xdc-master/Basys-3-Master.xdc">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../digilent-xdc-master/digilent-xdc-master/Basys-3-Master.xdc"/>
         <Attr Name="ImportTime" Val="1649955566"/>
@@ -141,9 +140,9 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
-    <Step Id="synth_design"/>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
+    <Step Id="synth_design">
+      <Option Id="FlattenHierarchy">1</Option>
+    </Step>
   </Strategy>
 </GenRun>

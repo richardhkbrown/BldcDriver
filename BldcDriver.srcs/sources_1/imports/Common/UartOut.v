@@ -22,20 +22,20 @@
 
 module UartOut
 #(parameter BAUD = 9600) (
-    input clk,
+    input clk_48mhz,
     output reg RsTx = 1,
     output dataFull,
     input req,
     output reg ack = 0,
-    input wire [7:0] dataIn
+    input wire [7:0] dataIn,
+    output [3:0] debug
     );
     
-    
     // Creat 1 cycle counter
-    localparam integer CLK_RATE = 100000000; // 100 MHz Artix7
+    localparam integer CLK_RATE = 48000000; // 48 MHz
     localparam real PERIOD = CLK_RATE/BAUD;
     localparam integer BITS_NEEDED = $clog2($rtoi(PERIOD)+1);
-    localparam integer RESET_COUNT = $rtoi(PERIOD);
+    localparam [(BITS_NEEDED-1):0] RESET_COUNT = $rtoi(PERIOD);
     reg [(BITS_NEEDED-1):0] counter = 0;
     
     // Fifo connections
@@ -54,67 +54,71 @@ module UartOut
     reg RST = 1;
     reg WREN = 0;
     
+    // Counter
+    wire [(BITS_NEEDED-1):0] Q;
+    wire TC;
+    wire CE;
+    
     // Wire assignment
-    assign CLK = clk;
+    assign CLK = clk_48mhz;
     reg [($clog2(10+1)):0] fifoResetCount = 10;
-    assign dataFull = FULL || (fifoResetCount!=0);
-    assign DI = dataIn;            
+    assign dataFull = FULL || ( fifoResetCount!=0 );
+    assign DI = dataIn;       
+    assign TC = 1'b1;
+    assign CE = 1'b1;
     
     // Reset fifo
-    always @ (posedge(CLK)) begin
-        RST <= (fifoResetCount>=4);
+    always @ ( posedge(CLK) ) begin
+        RST <= ( fifoResetCount>=4 );
         if ( fifoResetCount>0 ) begin
             fifoResetCount <= fifoResetCount - 1;
         end
     end
     
-    // Byte writer
-    reg [($clog2(11+1)):0] state = 0;
-    always @ (posedge(clk)) begin
+    // State machines
+    reg [($clog2(11+1)):0] state = 0; // 11 is max state
+    reg [($clog2(2+1)-1):0] reqState = 0; // 2 is max state
+    always @ ( posedge(clk_48mhz) ) begin
     
-        case(state)
-        
-            0:
-                if (!EMPTY && (fifoResetCount==0)) begin
-                    RsTx <= 0;
-                    state <= 1;
-                end
-                
-            1:
-               state <= 2; 
-            
-            2,3,4,5,6,7,8,9:
-                begin
-                    if (counter==RESET_COUNT) begin
-                        RsTx <= DO[state-2];
-                        state <= state + 1;
-                    end
-                end
-                
-            10:
-                if (counter==RESET_COUNT) begin
-                    RsTx <= 1;
-                    state <= 11;
-                end
-                
-            11:
-                if (counter==RESET_COUNT) begin
-                    state <= 0;
-                end
-                
-        endcase
-    
-    end
-    
-    // Increment counter
-    always @ (negedge(clk)) begin
-    
+        // Counter
         if ( state!=0 && counter<RESET_COUNT ) begin
             counter <= counter+1;
         end else begin
             counter <= 0;
         end
         
+        // Parallel to serial
+        case ( state )
+        
+            0:
+                if ( !EMPTY && (fifoResetCount==0) ) begin
+                    RsTx <= 0;
+                    state <= 1;
+                end
+                
+            1:
+                state <= 2;
+
+            2,3,4,5,6,7,8,9:
+                if ( counter==RESET_COUNT ) begin
+                    RsTx <= DO[state-2];
+                    state <= state + 1;
+                end
+                
+            10:
+                if ( counter==RESET_COUNT ) begin
+                    RsTx <= 1;
+                    state <= 11;
+                end
+                
+            11:
+                if ( counter==RESET_COUNT ) begin
+                    state <= 0;
+                end
+                
+        endcase
+        
+        // FIFO write
         if ( state==1 ) begin
             if (!EMPTY) begin
                 RDEN <= 1;
@@ -123,13 +127,8 @@ module UartOut
             RDEN <= 0;
         end
     
-    end
-    
-    // Request Handler
-    reg [($clog2(2+1)-1):0] reqState = 0;
-    always @ (negedge(clk)) begin
-    
-        case(reqState)
+        // FIFO read
+        case ( reqState )
         
             0:
                 if ( req && !dataFull ) begin
@@ -151,18 +150,85 @@ module UartOut
                 end
                         
         endcase
-    
+        
     end
 
-// FIFO_SYNC_MACRO : In order to incorporate this function into the design,
-//     Verilog      : the following instance declaration needs to be placed
-//    instance      : in the body of the design code.  The instance name
-//   declaration    : (FIFO_SYNC_MACRO_inst) and/or the port declarations within the
-//      code        : parenthesis may be changed to properly reference and
-//                  : connect this function to the design.  All inputs
-//                  : and outputs must be connected.
+//    always @ ( posedge(clk_48mhz) ) begin
+    
+//        // Increment counter
+//        if ( state!=0 && counter<RESET_COUNT ) begin
+//            counter <= counter+1;
+//        end else begin
+//            counter <= 0;
+//        end
+    
+//        // UART serial to FIFO writer
+//        case ( state )
+        
+//            0: // Sync bit (assert low)
+//                if ( !EMPTY && ( fifoResetCount==0 ) ) begin
+//                    RsTx <= 0;
+//                    RDEN <= 1;
+//                    state <= 1;
+//                end else begin
+//                    RsTx <= 1;
+//                end
 
-//  <-----Cut code below this line---->
+//            1,2,3,4,5,6,7,8,9,10,11:
+//                begin
+//                    RDEN <= 0;
+//                    if ( counter==RESET_COUNT ) begin
+//                        if ( state==1 ) begin
+//                            state <= state + 1;
+//                        end else if ( state>=2 && state<=9 ) begin
+//                            RsTx <= DOi[state-2];
+//                            state <= state + 1;
+//                        end else if ( state==10 ) begin
+//                            RsTx <= 1; // stop bit
+//                            state <= state + 1;
+//                        end else begin
+//                            state <= 0;
+//                        end
+//                    end
+//                end
+                
+//            default:
+//                begin
+//                end
+
+//        endcase
+
+//        // External FIFO write request handler
+//        case ( reqState )
+        
+//            0:
+//                if ( req && !dataFull ) begin
+//                    WREN <= 1;
+//                    reqState <= 1;
+//                end
+           
+//            1:
+//                begin
+//                    WREN <= 0;
+//                    ack <= 1;
+//                    reqState <= 2;
+//                end
+
+//            2:
+//                if ( !req ) begin
+//                    ack <= 0;
+//                    reqState <= 0;
+//                end
+                
+//            default:
+//                begin
+//                end
+                        
+//        endcase
+    
+//    end
+    
+    assign debug = state[3:0];
 
    // FIFO_SYNC_MACRO: Synchronous First-In, First-Out (FIFO) RAM Buffer
    //                  Artix-7

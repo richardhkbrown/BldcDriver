@@ -1,0 +1,18 @@
+0.7
+2020.2
+May  7 2023
+15:24:31
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.sim/Delay/behav/xsim/glbl.v,1683266558,verilog,,,,glbl,,uvm,,,,,,
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/Delay/new/TestDelay.sv,1693593987,systemVerilog,,,,TestDelay,,uvm,,,,,,
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/imports/Common/Debouncer.v,1693104901,verilog,,C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/imports/Common/UartIn.v,,Debouncer,,uvm,,,,,,
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/imports/Common/GhzPll.v,1691196100,verilog,,C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/ModuatePwm.v,,GhzPll,,uvm,,,,,,
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/imports/Common/SegmentDisplay.v,1692579899,verilog,,C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/imports/Common/SquareWave.v,,SegmentDisplay,,uvm,,,,,,
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/imports/Common/SquareWave.v,1692581249,verilog,,C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/BldcDriver.v,,SquareWave,,uvm,,,,,,
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/imports/Common/UartIn.v,1693103618,verilog,,C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/imports/Common/UartOut.v,,UartIn,,uvm,,,,,,
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/imports/Common/UartOut.v,1693104923,verilog,,C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/BldcUart.v,,UartOut,,uvm,,,,,,
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/BldcDriver.v,1692582216,verilog,,C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/imports/Common/Debouncer.v,,BldcDriver,,uvm,,,,,,
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/BldcUart.v,1693584389,verilog,,C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/imports/Common/GhzPll.v,,BldcUart,,uvm,,,,,,
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/ModuatePwm.v,1692581975,verilog,,C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/ModulateBldc.v,,ModulatePwm,,uvm,,,,,,
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/ModulateBldc.v,1692580302,verilog,,C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/PwmTest.v,,ModulateBldc,,uvm,,,,,,
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v,1693105805,verilog,,,,Proto,,uvm,,,,,,
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/PwmTest.v,1692419711,verilog,,C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v,,PwmTest,,uvm,,,,,,

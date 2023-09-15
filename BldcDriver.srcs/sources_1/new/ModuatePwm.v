@@ -21,10 +21,10 @@
 
 
 module ModulatePwm
-#(parameter [63:0] CLK_RATE = 100000000, parameter FREQUENCY=10000, parameter MAXAMP=256) (
+#(parameter [63:0] CLK_RATE = 100000000, parameter FREQUENCY = 10000, parameter MAXAMP = 256) (
     input clk,
     input [9:0] amp,
-    output reg D // changes on negedge clk
+    output reg D
     );
     
     localparam [63:0] RESET_COUNT = $rtoi((1.0/FREQUENCY)/(1.0/CLK_RATE));
@@ -44,12 +44,21 @@ module ModulatePwm
             assign LEVEL_VALS[i] = $rtoi( 1.0*RESET_COUNT*i/MAXAMP );
         end
     endgenerate
-        
-    always @ ( negedge(clk) ) begin
-        if ( Q <= LEVEL_VALS[amp[($clog2(MAXAMP+1)-1):0]] ) begin
-            D <= 1'b1;
+    
+    reg [31:0] levalLatch = 32'd0;
+    reg [9:0] ampLatch = 10'd0;
+    reg D2 = 1'b0;
+    always @ ( posedge(clk) ) begin
+        ampLatch <= amp;
+        D <= D2;
+    end
+    
+    //always @ ( negedge(clk) ) begin
+    always @ ( posedge(clk) ) begin
+        if ( Q <= LEVEL_VALS[ampLatch[($clog2(MAXAMP+1)-1):0]] ) begin
+            D2 <= 1'b1;
         end else begin
-            D <= 1'b0;
+            D2 <= 1'b0;
         end    
     end
     
@@ -77,7 +86,7 @@ module ModulatePwm
    ) COUNTER_TC_MACRO_inst (
       .Q(Q),     // Counter output bus, width determined by WIDTH_DATA parameter
       .TC(TC),   // 1-bit terminal count output, high = terminal count is reached
-      .CLK(CLK), // 1-bit positive edge clock input
+      .CLK(clk), // 1-bit positive edge clock input
       .CE(CE),   // 1-bit active high clock enable input
       .RST(RST)  // 1-bit active high synchronous reset
    );

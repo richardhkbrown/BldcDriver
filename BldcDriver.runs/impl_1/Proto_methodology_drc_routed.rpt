@@ -1,0 +1,263 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
+| Date         : Thu Sep 14 21:23:45 2023
+| Host         : DESKTOP-B5G40IL running 64-bit major release  (build 9200)
+| Command      : report_methodology -file Proto_methodology_drc_routed.rpt -pb Proto_methodology_drc_routed.pb -rpx Proto_methodology_drc_routed.rpx
+| Design       : Proto
+| Device       : xc7a35tcpg236-1
+| Speed File   : -1
+| Design State : Fully Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: checkpoint_Proto
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 33
++-----------+----------+-------------------------------------------------------------------------------------------------------+------------+
+| Rule      | Severity | Description                                                                                           | Violations |
++-----------+----------+-------------------------------------------------------------------------------------------------------+------------+
+| TIMING-47 | Warning  | False path, asynchronous clock group or max delay datapath only constraint between synchronous clocks | 2          |
+| XDCH-2    | Warning  | Same min and max delay values on IO port                                                              | 31         |
++-----------+----------+-------------------------------------------------------------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+TIMING-47#1 Warning
+False path, asynchronous clock group or max delay datapath only constraint between synchronous clocks  
+A Clock Group timing constraint is set between synchronous clocks CLKOUT_48 and uart_clk (see constraint position 3 in the Timing Constraint window in Vivado IDE). Masking entire synchronous clock domains via  set_false_path, set_clock_groups or set_max_delay -datapath_only may result in failure in hardware.
+Related violations: <none>
+
+TIMING-47#2 Warning
+False path, asynchronous clock group or max delay datapath only constraint between synchronous clocks  
+A Clock Group timing constraint is set between synchronous clocks uart_clk and CLKOUT_48 (see constraint position 3 in the Timing Constraint window in Vivado IDE). Masking entire synchronous clock domains via  set_false_path, set_clock_groups or set_max_delay -datapath_only may result in failure in hardware.
+Related violations: <none>
+
+XDCH-2#1 Warning
+Same min and max delay values on IO port  
+The same input delay of 0.100 ns has been defined on port 'RsRx' relative to clock uart_clk for both max and min. Make sure this reflects the design intent.
+set_input_delay -clock uart_clk 0.100 [get_ports RsRx]
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/Proto/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 186)
+Related violations: <none>
+
+XDCH-2#2 Warning
+Same min and max delay values on IO port  
+The same input delay of 0.100 ns has been defined on port 'btnC' relative to clock uart_clk for both max and min. Make sure this reflects the design intent.
+set_input_delay -clock uart_clk 0.100 [get_ports btnC]
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/Proto/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 189)
+Related violations: <none>
+
+XDCH-2#3 Warning
+Same min and max delay values on IO port  
+The same input delay of 0.100 ns has been defined on port 'btnD' relative to clock uart_clk for both max and min. Make sure this reflects the design intent.
+set_input_delay -clock uart_clk 0.100 [get_ports btnD]
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/Proto/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 193)
+Related violations: <none>
+
+XDCH-2#4 Warning
+Same min and max delay values on IO port  
+The same input delay of 0.100 ns has been defined on port 'btnL' relative to clock uart_clk for both max and min. Make sure this reflects the design intent.
+set_input_delay -clock uart_clk 0.100 [get_ports btnL]
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/Proto/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 191)
+Related violations: <none>
+
+XDCH-2#5 Warning
+Same min and max delay values on IO port  
+The same input delay of 0.100 ns has been defined on port 'btnR' relative to clock uart_clk for both max and min. Make sure this reflects the design intent.
+set_input_delay -clock uart_clk 0.100 [get_ports btnR]
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/Proto/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 192)
+Related violations: <none>
+
+XDCH-2#6 Warning
+Same min and max delay values on IO port  
+The same input delay of 0.100 ns has been defined on port 'btnU' relative to clock uart_clk for both max and min. Make sure this reflects the design intent.
+set_input_delay -clock uart_clk 0.100 [get_ports btnU]
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/Proto/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 190)
+Related violations: <none>
+
+XDCH-2#7 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.100 ns has been defined on port 'RsTx' relative to clock uart_clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock uart_clk 0.100 [get_ports RsTx]
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/Proto/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 187)
+Related violations: <none>
+
+XDCH-2#8 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.100 ns has been defined on port 'an[0]' relative to clock uart_clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock uart_clk 0.100 [get_ports {an[0]}]
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/Proto/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 181)
+Related violations: <none>
+
+XDCH-2#9 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.100 ns has been defined on port 'an[1]' relative to clock uart_clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock uart_clk 0.100 [get_ports {an[1]}]
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/Proto/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 182)
+Related violations: <none>
+
+XDCH-2#10 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.100 ns has been defined on port 'an[2]' relative to clock uart_clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock uart_clk 0.100 [get_ports {an[2]}]
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/Proto/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 183)
+Related violations: <none>
+
+XDCH-2#11 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.100 ns has been defined on port 'an[3]' relative to clock uart_clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock uart_clk 0.100 [get_ports {an[3]}]
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/Proto/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 184)
+Related violations: <none>
+
+XDCH-2#12 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.100 ns has been defined on port 'dp' relative to clock uart_clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock uart_clk 0.100 [get_ports dp]
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/Proto/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 180)
+Related violations: <none>
+
+XDCH-2#13 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.100 ns has been defined on port 'led[0]' relative to clock uart_clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock uart_clk 0.100 [get_ports {led[0]}]
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/Proto/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 160)
+Related violations: <none>
+
+XDCH-2#14 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.100 ns has been defined on port 'led[10]' relative to clock uart_clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock uart_clk 0.100 [get_ports {led[10]}]
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/Proto/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 170)
+Related violations: <none>
+
+XDCH-2#15 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.100 ns has been defined on port 'led[11]' relative to clock uart_clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock uart_clk 0.100 [get_ports {led[11]}]
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/Proto/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 171)
+Related violations: <none>
+
+XDCH-2#16 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.100 ns has been defined on port 'led[1]' relative to clock uart_clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock uart_clk 0.100 [get_ports {led[1]}]
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/Proto/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 161)
+Related violations: <none>
+
+XDCH-2#17 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.100 ns has been defined on port 'led[2]' relative to clock uart_clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock uart_clk 0.100 [get_ports {led[2]}]
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/Proto/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 162)
+Related violations: <none>
+
+XDCH-2#18 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.100 ns has been defined on port 'led[3]' relative to clock uart_clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock uart_clk 0.100 [get_ports {led[3]}]
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/Proto/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 163)
+Related violations: <none>
+
+XDCH-2#19 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.100 ns has been defined on port 'led[4]' relative to clock uart_clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock uart_clk 0.100 [get_ports {led[4]}]
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/Proto/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 164)
+Related violations: <none>
+
+XDCH-2#20 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.100 ns has been defined on port 'led[5]' relative to clock uart_clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock uart_clk 0.100 [get_ports {led[5]}]
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/Proto/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 165)
+Related violations: <none>
+
+XDCH-2#21 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.100 ns has been defined on port 'led[6]' relative to clock uart_clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock uart_clk 0.100 [get_ports {led[6]}]
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/Proto/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 166)
+Related violations: <none>
+
+XDCH-2#22 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.100 ns has been defined on port 'led[7]' relative to clock uart_clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock uart_clk 0.100 [get_ports {led[7]}]
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/Proto/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 167)
+Related violations: <none>
+
+XDCH-2#23 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.100 ns has been defined on port 'led[8]' relative to clock uart_clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock uart_clk 0.100 [get_ports {led[8]}]
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/Proto/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 168)
+Related violations: <none>
+
+XDCH-2#24 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.100 ns has been defined on port 'led[9]' relative to clock uart_clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock uart_clk 0.100 [get_ports {led[9]}]
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/Proto/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 169)
+Related violations: <none>
+
+XDCH-2#25 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.100 ns has been defined on port 'seg[0]' relative to clock uart_clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock uart_clk 0.100 [get_ports {seg[0]}]
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/Proto/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 173)
+Related violations: <none>
+
+XDCH-2#26 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.100 ns has been defined on port 'seg[1]' relative to clock uart_clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock uart_clk 0.100 [get_ports {seg[1]}]
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/Proto/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 174)
+Related violations: <none>
+
+XDCH-2#27 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.100 ns has been defined on port 'seg[2]' relative to clock uart_clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock uart_clk 0.100 [get_ports {seg[2]}]
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/Proto/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 175)
+Related violations: <none>
+
+XDCH-2#28 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.100 ns has been defined on port 'seg[3]' relative to clock uart_clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock uart_clk 0.100 [get_ports {seg[3]}]
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/Proto/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 176)
+Related violations: <none>
+
+XDCH-2#29 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.100 ns has been defined on port 'seg[4]' relative to clock uart_clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock uart_clk 0.100 [get_ports {seg[4]}]
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/Proto/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 177)
+Related violations: <none>
+
+XDCH-2#30 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.100 ns has been defined on port 'seg[5]' relative to clock uart_clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock uart_clk 0.100 [get_ports {seg[5]}]
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/Proto/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 178)
+Related violations: <none>
+
+XDCH-2#31 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.100 ns has been defined on port 'seg[6]' relative to clock uart_clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock uart_clk 0.100 [get_ports {seg[6]}]
+C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/Proto/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 179)
+Related violations: <none>
+
+

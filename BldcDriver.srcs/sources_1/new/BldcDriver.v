@@ -137,7 +137,8 @@ output [5:0] JA
     end
     assign JA = hBus;
     
-    assign led[15-:8] = {8{D}};
-    assign led[0+:6] = hBus;
+    //assign led[15-:8] = {8{D}};
+    //assign led[0+:6] = hBus;
+    assign led = 16'hFFFF;
     
 endmodule

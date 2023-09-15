@@ -1,0 +1,110 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
+| Date         : Thu Sep 14 21:22:59 2023
+| Host         : DESKTOP-B5G40IL running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file Proto_control_sets_placed.rpt
+| Design       : Proto
+| Device       : xc7a35t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    32 |
+|    Minimum number of control sets                        |    32 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   123 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    32 |
+| >= 0 to < 4        |    11 |
+| >= 4 to < 6        |     7 |
+| >= 6 to < 8        |     3 |
+| >= 8 to < 10       |     4 |
+| >= 10 to < 12      |     2 |
+| >= 12 to < 14      |     2 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     3 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              56 |           27 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              26 |            8 |
+| Yes          | No                    | No                     |             103 |           58 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              52 |           22 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-----------------+----------------------------------+----------------------------------+------------------+----------------+--------------+
+|   Clock Signal  |           Enable Signal          |         Set/Reset Signal         | Slice Load Count | Bel Load Count | Bels / Slice |
++-----------------+----------------------------------+----------------------------------+------------------+----------------+--------------+
+|  CLKOUT_48_BUFG | segDisp/seg[6]_i_1_n_0           |                                  |                1 |              1 |         1.00 |
+|  CLKOUT_48_BUFG | uin/p_0_in[5]                    |                                  |                1 |              1 |         1.00 |
+|  CLKOUT_48_BUFG | uin/p_0_in[6]                    |                                  |                1 |              1 |         1.00 |
+|  CLKOUT_48_BUFG | uin/p_0_in[1]                    |                                  |                1 |              1 |         1.00 |
+|  CLKOUT_48_BUFG | uin/p_0_in[2]                    |                                  |                1 |              1 |         1.00 |
+|  CLKOUT_48_BUFG | uin/p_0_in[3]                    |                                  |                1 |              1 |         1.00 |
+|  CLKOUT_48_BUFG | uin/p_0_in[4]                    |                                  |                1 |              1 |         1.00 |
+|  CLKOUT_48_BUFG | uin/p_0_in[7]                    |                                  |                1 |              1 |         1.00 |
+|  CLKOUT_48_BUFG | uin/p_0_in[0]                    |                                  |                1 |              1 |         1.00 |
+|  CLKOUT_48_BUFG | uout/RsTx_i_1_n_0                |                                  |                1 |              1 |         1.00 |
+|  CLKOUT_48_BUFG | uin/sel                          |                                  |                1 |              3 |         3.00 |
+|  CLKOUT_48_BUFG | uin/state[3]_i_1_n_0             |                                  |                1 |              4 |         4.00 |
+|  CLKOUT_48_BUFG | uout/sel                         |                                  |                1 |              4 |         4.00 |
+|  CLKOUT_48_BUFG | bldcUart/buffer[4][5]_i_1_n_0    |                                  |                2 |              4 |         2.00 |
+|  CLKOUT_48_BUFG | bldcUart/state                   |                                  |                2 |              5 |         2.50 |
+|  CLKOUT_48_BUFG | bldcUart/msgBuffer[6][4]_i_1_n_0 |                                  |                2 |              5 |         2.50 |
+|  CLKOUT_48_BUFG | segDisp/counter0                 |                                  |                2 |              5 |         2.50 |
+|  CLKOUT_48_BUFG | uout/p_0_in                      |                                  |                2 |              5 |         2.50 |
+|  CLKOUT_48_BUFG | segDisp/counter0                 | segDisp/seg[5]_i_1_n_0           |                2 |              6 |         3.00 |
+|  CLKOUT_48_BUFG | bldcUart/buffer[0][7]_i_2_n_0    | bldcUart/buffer[0][7]_i_1_n_0    |                2 |              6 |         3.00 |
+|  CLKOUT_48_BUFG | bldcUart/msgBuffer[2][7]_i_1_n_0 |                                  |                5 |              7 |         1.40 |
+|  CLKOUT_48_BUFG | bldcUart/asciiVal[7]_i_1_n_0     |                                  |                4 |              8 |         2.00 |
+|  CLKOUT_48_BUFG | bldcUart/msgBuffer[0][7]_i_1_n_0 | bldcUart/msgBuffer[1][7]_i_1_n_0 |                5 |              8 |         1.60 |
+|  CLKOUT_48_BUFG | bldcUart/msgBuffer[1][7]_i_2_n_0 | bldcUart/msgBuffer[1][7]_i_1_n_0 |                5 |              8 |         1.60 |
+|  CLKOUT_48_BUFG | bldcUart/buffer[3][7]_i_2_n_0    | bldcUart/buffer[3][7]_i_1_n_0    |                4 |              8 |         2.00 |
+|  CLKOUT_48_BUFG | bldcUart/setData1024[10]_i_1_n_0 |                                  |                6 |             11 |         1.83 |
+|  CLKOUT_48_BUFG | bldcUart/msgBuffer[4][3]_i_1_n_0 |                                  |                7 |             11 |         1.57 |
+|  CLKOUT_48_BUFG |                                  | uin/counter[0]_i_1_n_0           |                4 |             13 |         3.25 |
+|  CLKOUT_48_BUFG |                                  | uout/counter[0]_i_1_n_0          |                4 |             13 |         3.25 |
+|  CLKOUT_48_BUFG | bldcUart/buffer[1][7]_i_2_n_0    | bldcUart/buffer[1][7]_i_1_n_0    |                4 |             16 |         4.00 |
+|  CLKOUT_48_BUFG | bldcUart/setData[9]_i_1_n_0      |                                  |               13 |             21 |         1.62 |
+|  CLKOUT_48_BUFG |                                  |                                  |               27 |             56 |         2.07 |
++-----------------+----------------------------------+----------------------------------+------------------+----------------+--------------+
+
+

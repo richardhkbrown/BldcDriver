@@ -22,12 +22,12 @@
 
 module SegmentDisplay
 #(parameter REFRESH = 240) (
-    input clk,
+    input clk_48mhz,
     input [9:0] digits,
     input [3:0] decimals,
-    output [6:0] seg,
-    output dp,
-    output [3:0] an
+    output reg [6:0] seg = 7'b0000000,
+    output reg dp = 1'b0,
+    output reg [3:0] an = 4'b0000
     );
 
 // 7-segment encoding
@@ -80,23 +80,28 @@ module SegmentDisplay
         end
     endgenerate
     
-    wire clkSegment;
-    SquareWave #(.FREQUENCY(REFRESH)) squareWare(.clk(clk),.out(clkSegment),.dutyFactor(8'd127));
+    wire D;
+    reg nD = 1'b0;
+    SquareWave #(.FREQUENCY(REFRESH)) squareWare(.clk_48mhz(clk_48mhz),.D(D));
     
     reg [1:0] counter = 0;
-    always @ (posedge(clkSegment)) begin
-        counter = counter+1;
-    end
-
     wire [6:0] segWire;
     wire dpWire;
     wire [3:0] anWire;
-    reg [6:0] segReg = 0;
-    reg dpReg = 0;
-    reg [3:0] anReg = 0;
-    assign seg = segReg;
-    assign dp = dpReg;
-    assign an = anReg;
+    
+    always @ ( posedge(clk_48mhz) ) begin
+    
+        nD <= !D;
+        
+        // Latch positive D edge
+        if ( D && nD ) begin
+            counter = counter+1;
+            an <= anWire;
+            seg <= segWire;
+            dp <= dpWire;
+        end
+        
+    end
     
     assign anWire = counter==0 ? 4'b1110 :
                     counter==1 ? 4'b1101 :
@@ -111,11 +116,5 @@ module SegmentDisplay
                      7'b1111111;
                  
     assign dpWire = ~decimals[counter];
-        
-    always @ (negedge(clkSegment)) begin
-        anReg <= anWire;
-        segReg <= segWire;
-        dpReg <= dpWire;
-    end
     
 endmodule

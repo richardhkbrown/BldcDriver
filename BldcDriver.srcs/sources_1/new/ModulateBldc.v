@@ -21,14 +21,14 @@
 
 
 module ModulateBldc
-#(parameter [63:0] CLK_RATE = 100000000, parameter MAXRPM=256) (
+#(parameter [63:0] CLK_RATE = 100000000, parameter MAXRPM = 256) (
     input clk,
     input signed [9:0] rpm,
     output reg [$clog2(6):0] seq = 0 // changes on negedge clk
     );
 
-    localparam integer RESET_WIDTH = $clog2(60*CLK_RATE);
-    localparam time RESET_COUNT = 60*CLK_RATE-1;
+    localparam [31:0] RESET_WIDTH = $clog2(60*CLK_RATE);
+    localparam [63:0] RESET_COUNT = 60*CLK_RATE-1;
     wire [31:0] Q;
     wire TC;
     wire CLK;
@@ -60,7 +60,8 @@ module ModulateBldc
     always @ ( posedge(clk) ) begin
         absRpmLatch <= absRpm;
     end
-    always @ ( negedge(clk) ) begin
+    //always @ ( negedge(clk) ) begin
+    always @ ( posedge(clk) ) begin
         if ( Q >= LEVEL_VALS[absRpmLatch[($clog2(MAXRPM+1)-1):0]] ) begin
             if ( !RST ) begin
                 RST <= 1'b1;
