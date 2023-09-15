@@ -35,7 +35,8 @@ module BldcUart
     output reg setReq = 0,
     input setAck,
     output reg setType = 0, // 0=amp, 1=rpm
-    output reg signed [9:0] setData = $rtoi(0.5*MAX_AMP)
+    output reg signed [9:0] setData = $rtoi(0.5*MAX_AMP),
+    output [4:0] debug
     );
 
     // Ascii to int
@@ -444,5 +445,7 @@ module BldcUart
         endcase
         
     end
+    
+    assign debug = state[4:0];
     
 endmodule

@@ -32,7 +32,7 @@ input btnU,
 input btnL,
 input btnR,
 input btnD,
-output [11:0] led
+output [8:0] led
     );
     
     // Clocks
@@ -65,19 +65,14 @@ output [11:0] led
     wire uinAck;
     wire [7:0] uinDataOut;
     UartIn uin( .clk_48mhz(CLKOUT_48), .RsRx(RsRx), .dataAvail(uinDatAvail), .req(uinReq),
-        .ack(uinAck), .dataOut(uinDataOut), .debug(led[3:0]) );
+        .ack(uinAck), .dataOut(uinDataOut) );
         
     wire uoutDataFull;
     wire uoutReq;
     wire uoutAck;
     wire [7:0] uoutDataIn;
     UartOut uout( .clk_48mhz(CLKOUT_48), .RsTx(RsTx), .dataFull(uoutDataFull), .req(uoutReq),
-        .ack(uoutAck), .dataIn(uoutDataIn), .debug(led[7:4]) );
-        
-    assign led[8] = uinReq;
-    assign led[9] = uinAck;
-    assign led[10] = uoutReq;
-    assign led[11] = uoutAck;
+        .ack(uoutAck), .dataIn(uoutDataIn) );
 
     wire [4:0] btns;
     assign btns = {btnC,btnU,btnL,btnR,btnD};
@@ -91,7 +86,45 @@ output [11:0] led
     BldcUart bldcUart( .clk_48mhz(CLKOUT_48), .btns(btnsDbc),
         .dataAvail(uinDatAvail), .inData(uinDataOut), .inReq(uinReq), .inAck(uinAck),
         .outData(uoutDataIn), .outReq(uoutReq), .outAck(uoutAck),
-        .setReq(setReq), .setAck(setAck), .setType(setType), .setData(setData) );
+        .setReq(setReq), .setAck(setAck), .setType(setType), .setData(setData), .debug(led[4:0]) );
+
+    reg signed [9:0] ampData = 50;
+    reg signed [9:0] rpmData = 0;
+    reg [($clog2(2+1)-1):0] state = 0;
+    always @ ( posedge(CLKOUT_48 )) begin
+    
+        case(state)
+        
+            0:
+                if ( setReq ) begin
+                    setAck <= 1;
+                    if ( setType==0 ) begin
+                        ampData <= setData;
+                    end else if ( setType==1 ) begin
+                        rpmData <= setData;
+                    end
+                    state <= 1;
+                end
+            
+            1:
+                if ( !setReq ) begin
+                    setAck <= 0;
+                    state <= 0;
+                end
+
+        endcase
+        
+    end
+
+    assign digits = setType==1 ? rpmData :
+                    ampData;
+    assign decimals = setType==1 ? {4'b0000} :
+                      {4'b1111};
+                      
+    assign led[5] = uinReq;
+    assign led[6] = uinAck;
+    assign led[7] = uoutReq;
+    assign led[8] = uoutAck;
 
 // PLLE2_BASE  : In order to incorporate this function into the design,
 //   Verilog   : the following instance declaration needs to be placed

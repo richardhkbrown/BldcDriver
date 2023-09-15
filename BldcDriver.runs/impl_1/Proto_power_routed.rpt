@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date             : Thu Sep 14 21:23:46 2023
+| Date             : Thu Sep 14 22:23:29 2023
 | Host             : DESKTOP-B5G40IL running 64-bit major release  (build 9200)
 | Command          : report_power -file Proto_power_routed.rpt -pb Proto_power_summary_routed.pb -rpx Proto_power_routed.rpx
 | Design           : Proto
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.192        |
+| Total On-Chip Power (W)  | 0.194        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.120        |
+| Dynamic (W)              | 0.122        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.0         |
@@ -53,19 +53,19 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.001 |        6 |       --- |             --- |
-| Slice Logic    |     0.005 |     2711 |       --- |             --- |
-|   LUT as Logic |     0.005 |     1672 |     20800 |            8.04 |
+| Slice Logic    |     0.004 |     2719 |       --- |             --- |
+|   LUT as Logic |     0.004 |     1662 |     20800 |            7.99 |
 |   CARRY4       |    <0.001 |      318 |      8150 |            3.90 |
-|   Register     |    <0.001 |      237 |     41600 |            0.57 |
+|   Register     |    <0.001 |      241 |     41600 |            0.58 |
 |   F7/F8 Muxes  |    <0.001 |        3 |     32600 |           <0.01 |
-|   Others       |     0.000 |       25 |       --- |             --- |
-| Signals        |     0.005 |     1392 |       --- |             --- |
+|   Others       |     0.000 |       26 |       --- |             --- |
+| Signals        |     0.004 |     1396 |       --- |             --- |
 | Block RAM      |    <0.001 |        1 |        50 |            2.00 |
 | PLL            |     0.106 |        1 |         5 |           20.00 |
 | DSPs           |    <0.001 |        2 |        90 |            2.22 |
-| I/O            |     0.002 |       32 |       106 |           30.19 |
+| I/O            |     0.005 |       29 |       106 |           27.36 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.192 |          |           |                 |
+| Total          |     0.194 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,9 +75,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.024 |       0.015 |      0.010 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.070 |       0.057 |      0.013 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.023 |       0.013 |      0.010 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.070 |       0.058 |      0.013 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.003 |       0.002 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -146,8 +146,8 @@ Table of Contents
 +------------+-----------+
 | Name       | Power (W) |
 +------------+-----------+
-| Proto      |     0.120 |
-|   bldcUart |     0.010 |
+| Proto      |     0.122 |
+|   bldcUart |     0.009 |
 +------------+-----------+
 
 

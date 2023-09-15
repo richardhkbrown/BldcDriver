@@ -27,8 +27,7 @@ module UartIn
     output dataAvail,
     input req,
     output reg ack = 0,
-    output [7:0] dataOut,
-    output [3:0] debug
+    output [7:0] dataOut
     );
     
     // Creat 1 cycle counter
@@ -143,8 +142,6 @@ module UartIn
        
     end
     
-    assign debug = state[3:0];
-
 // FIFO_SYNC_MACRO : In order to incorporate this function into the design,
 //     Verilog      : the following instance declaration needs to be placed
 //    instance      : in the body of the design code.  The instance name

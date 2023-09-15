@@ -27,8 +27,7 @@ module UartOut
     output dataFull,
     input req,
     output reg ack = 0,
-    input wire [7:0] dataIn,
-    output [3:0] debug
+    input wire [7:0] dataIn
     );
     
     // Creat 1 cycle counter
@@ -152,84 +151,7 @@ module UartOut
         endcase
         
     end
-
-//    always @ ( posedge(clk_48mhz) ) begin
     
-//        // Increment counter
-//        if ( state!=0 && counter<RESET_COUNT ) begin
-//            counter <= counter+1;
-//        end else begin
-//            counter <= 0;
-//        end
-    
-//        // UART serial to FIFO writer
-//        case ( state )
-        
-//            0: // Sync bit (assert low)
-//                if ( !EMPTY && ( fifoResetCount==0 ) ) begin
-//                    RsTx <= 0;
-//                    RDEN <= 1;
-//                    state <= 1;
-//                end else begin
-//                    RsTx <= 1;
-//                end
-
-//            1,2,3,4,5,6,7,8,9,10,11:
-//                begin
-//                    RDEN <= 0;
-//                    if ( counter==RESET_COUNT ) begin
-//                        if ( state==1 ) begin
-//                            state <= state + 1;
-//                        end else if ( state>=2 && state<=9 ) begin
-//                            RsTx <= DOi[state-2];
-//                            state <= state + 1;
-//                        end else if ( state==10 ) begin
-//                            RsTx <= 1; // stop bit
-//                            state <= state + 1;
-//                        end else begin
-//                            state <= 0;
-//                        end
-//                    end
-//                end
-                
-//            default:
-//                begin
-//                end
-
-//        endcase
-
-//        // External FIFO write request handler
-//        case ( reqState )
-        
-//            0:
-//                if ( req && !dataFull ) begin
-//                    WREN <= 1;
-//                    reqState <= 1;
-//                end
-           
-//            1:
-//                begin
-//                    WREN <= 0;
-//                    ack <= 1;
-//                    reqState <= 2;
-//                end
-
-//            2:
-//                if ( !req ) begin
-//                    ack <= 0;
-//                    reqState <= 0;
-//                end
-                
-//            default:
-//                begin
-//                end
-                        
-//        endcase
-    
-//    end
-    
-    assign debug = state[3:0];
-
    // FIFO_SYNC_MACRO: Synchronous First-In, First-Out (FIFO) RAM Buffer
    //                  Artix-7
    // Xilinx HDL Language Template, version 2022.2
