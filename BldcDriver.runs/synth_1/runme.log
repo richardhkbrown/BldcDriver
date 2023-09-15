@@ -14,7 +14,7 @@ ECHO is off.
     ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source Proto.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 432.609 ; gain = 161.277
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 430.270 ; gain = 162.234
 Command: read_checkpoint -auto_incremental -incremental C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/utils_1/imports/synth_1/BldcDriver.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/utils_1/imports/synth_1/BldcDriver.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -27,12 +27,12 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 13888
+INFO: [Synth 8-7075] Helper process launched with PID 14196
 INFO: [Synth 8-11241] undeclared symbol 'CLKOUT5', assumed default net type 'wire' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/imports/Common/GhzPll.v:96]
 INFO: [Synth 8-11241] undeclared symbol 'CLKFB', assumed default net type 'wire' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/imports/Common/GhzPll.v:98]
 INFO: [Synth 8-11241] undeclared symbol 'CLKFBIN', assumed default net type 'wire' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:53]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 1249.250 ; gain = 411.195
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1249.414 ; gain = 410.797
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'Proto' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:23]
 INFO: [Synth 8-6157] synthesizing module 'SegmentDisplay' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/imports/Common/SegmentDisplay.v:23]
@@ -96,9 +96,9 @@ INFO: [Synth 8-6155] done synthesizing module 'xil_internal_svlib_COUNTER_TC_MAC
 INFO: [Synth 8-6155] done synthesizing module 'SquareWave__parameterized0' (0#1) [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/imports/Common/SquareWave.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'Debouncer' (0#1) [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/imports/Common/Debouncer.v:23]
 INFO: [Synth 8-6157] synthesizing module 'BldcUart' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/BldcUart.v:23]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/BldcUart.v:128]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/BldcUart.v:127]
 INFO: [Synth 8-6155] done synthesizing module 'BldcUart' (0#1) [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/BldcUart.v:23]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:96]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:94]
 INFO: [Synth 8-6157] synthesizing module 'PLLE2_BASE' [C:/Xilinx/Vivado/2023.1/scripts/rt/data/unisim_comp.v:109492]
 	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
 	Parameter CLKFBOUT_MULT bound to: 12 - type: integer 
@@ -127,22 +127,22 @@ INFO: [Synth 8-6157] synthesizing module 'PLLE2_BASE' [C:/Xilinx/Vivado/2023.1/s
 	Parameter STARTUP_WAIT bound to: FALSE - type: string 
 INFO: [Synth 8-6155] done synthesizing module 'PLLE2_BASE' (0#1) [C:/Xilinx/Vivado/2023.1/scripts/rt/data/unisim_comp.v:109492]
 INFO: [Synth 8-6155] done synthesizing module 'Proto' (0#1) [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:23]
-WARNING: [Synth 8-6014] Unused sequential element btnsReg_reg was removed.  [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/BldcUart.v:137]
-WARNING: [Synth 8-6014] Unused sequential element rpmData_reg was removed.  [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/BldcUart.v:426]
-WARNING: [Synth 8-6014] Unused sequential element ampData_reg was removed.  [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/BldcUart.v:428]
+WARNING: [Synth 8-6014] Unused sequential element btnsReg_reg was removed.  [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/BldcUart.v:136]
+WARNING: [Synth 8-6014] Unused sequential element rpmData_reg was removed.  [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/BldcUart.v:425]
+WARNING: [Synth 8-6014] Unused sequential element ampData_reg was removed.  [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/BldcUart.v:427]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:12 . Memory (MB): peak = 1365.148 ; gain = 527.094
+Finished RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1365.238 ; gain = 526.621
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1365.148 ; gain = 527.094
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1365.238 ; gain = 526.621
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1365.148 ; gain = 527.094
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1365.238 ; gain = 526.621
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 1365.398 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 1365.238 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 5 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -157,29 +157,29 @@ Resolution: To avoid this warning, move constraints listed in [.Xil/Proto_propIm
 INFO: [Timing 38-2] Deriving generated clocks
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1399.133 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1397.652 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   PLLE2_BASE => PLLE2_ADV: 1 instance 
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1399.133 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1397.652 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1399.133 ; gain = 561.078
+Finished Constraint Validation : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1397.652 ; gain = 559.035
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1399.133 ; gain = 561.078
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1397.652 ; gain = 559.035
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1399.133 ; gain = 561.078
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1397.652 ; gain = 559.035
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'reqState_reg' in module 'UartIn'
 INFO: [Synth 8-802] inferred FSM for state register 'reqState_reg' in module 'UartOut'
@@ -211,7 +211,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'reqState_reg' using encodi
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'Proto'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 1399.133 ; gain = 561.078
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1397.652 ; gain = 559.035
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -285,41 +285,8 @@ Start Cross Boundary and Area Optimization
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 WARNING: [Synth 8-3332] Sequential element (FSM_onehot_reqState_reg[3]) is unused and will be removed from module UartIn.
 WARNING: [Synth 8-3332] Sequential element (FSM_onehot_reqState_reg[3]) is unused and will be removed from module UartOut.
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin digits[9] with 1st driver pin 'digits0_inferred/digits0[9]' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin digits[9] with 2nd driver pin 'GND' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:119]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net digits[9] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin digits[8] with 1st driver pin 'digits0_inferred/digits0[8]' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin digits[8] with 2nd driver pin 'GND' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:119]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net digits[8] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin digits[7] with 1st driver pin 'digits0_inferred/digits0[7]' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin digits[7] with 2nd driver pin 'GND' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:119]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net digits[7] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin digits[6] with 1st driver pin 'digits0_inferred/digits0[6]' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin digits[6] with 2nd driver pin 'GND' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:119]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net digits[6] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin digits[5] with 1st driver pin 'digits0_inferred/digits0[5]' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin digits[5] with 2nd driver pin 'GND' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:119]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net digits[5] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin digits[4] with 1st driver pin 'digits0_inferred/digits0[4]' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin digits[4] with 2nd driver pin 'GND' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:119]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net digits[4] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin digits[3] with 1st driver pin 'digits0_inferred/digits0[3]' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin digits[3] with 2nd driver pin 'GND' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:119]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net digits[3] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin digits[2] with 1st driver pin 'digits0_inferred/digits0[2]' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin digits[2] with 2nd driver pin 'GND' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:119]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net digits[2] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin digits[1] with 1st driver pin 'digits0_inferred/digits0[1]' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin digits[1] with 2nd driver pin 'GND' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:119]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net digits[1] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin digits[0] with 1st driver pin 'digits0_inferred/digits0[0]' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin digits[0] with 2nd driver pin 'GND' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:119]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net digits[0] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin decimals[3] with 1st driver pin 'decimals0_inferred/decimals0[0]' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:121]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin decimals[3] with 2nd driver pin 'GND' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:121]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net decimals[3] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:121]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1399.133 ; gain = 561.078
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1397.652 ; gain = 559.035
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -333,7 +300,7 @@ ROM: Preliminary Mapping Report
 |SegmentDisplay | TENBIT     | 1024x7        | LUT            | 
 |SegmentDisplay | TENBIT     | 1024x6        | LUT            | 
 |SegmentDisplay | TENBIT     | 1024x7        | LUT            | 
-|SegmentDisplay | TENBIT     | 1024x7        | LUT            | 
+|SegmentDisplay | TENBIT     | 1024x6        | LUT            | 
 +---------------+------------+---------------+----------------+
 
 ---------------------------------------------------------------------------------
@@ -343,19 +310,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 1399.133 ; gain = 561.078
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:47 ; elapsed = 00:00:48 . Memory (MB): peak = 1397.652 ; gain = 559.035
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:47 ; elapsed = 00:00:48 . Memory (MB): peak = 1408.852 ; gain = 570.797
+Finished Timing Optimization : Time (s): cpu = 00:00:48 ; elapsed = 00:00:49 . Memory (MB): peak = 1399.629 ; gain = 561.012
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:48 ; elapsed = 00:00:49 . Memory (MB): peak = 1419.926 ; gain = 581.871
+Finished Technology Mapping : Time (s): cpu = 00:00:49 ; elapsed = 00:00:50 . Memory (MB): peak = 1420.281 ; gain = 581.664
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -367,19 +334,19 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:54 ; elapsed = 00:00:54 . Memory (MB): peak = 1426.164 ; gain = 588.109
+Finished IO Insertion : Time (s): cpu = 00:00:55 ; elapsed = 00:00:56 . Memory (MB): peak = 1425.566 ; gain = 586.949
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 1426.164 ; gain = 588.109
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:55 ; elapsed = 00:00:56 . Memory (MB): peak = 1425.566 ; gain = 586.949
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 1426.164 ; gain = 588.109
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:55 ; elapsed = 00:00:56 . Memory (MB): peak = 1425.566 ; gain = 586.949
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -407,43 +374,43 @@ Report Cell Usage:
 |1     |CARRY4     |   318|
 |2     |DSP48E1    |     2|
 |3     |FIFO18E1   |     2|
-|4     |LUT1       |    48|
-|5     |LUT2       |   201|
-|6     |LUT3       |   578|
-|7     |LUT4       |   239|
-|8     |LUT5       |   196|
-|9     |LUT6       |   885|
-|10    |MUXF7      |     3|
-|11    |PLLE2_BASE |     1|
-|12    |FDRE       |   222|
-|13    |FDSE       |    14|
-|14    |IBUF       |     7|
-|15    |OBUF       |    22|
+|4     |LUT1       |    52|
+|5     |LUT2       |   200|
+|6     |LUT3       |   598|
+|7     |LUT4       |   245|
+|8     |LUT5       |   221|
+|9     |LUT6       |  1010|
+|10    |MUXF7      |    20|
+|11    |MUXF8      |     2|
+|12    |PLLE2_BASE |     1|
+|13    |FDRE       |   241|
+|14    |FDSE       |    22|
+|15    |IBUF       |     7|
+|16    |OBUF       |    29|
 +------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 1426.164 ; gain = 588.109
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:55 ; elapsed = 00:00:56 . Memory (MB): peak = 1425.566 ; gain = 586.949
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 33 critical warnings and 3 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:39 ; elapsed = 00:00:52 . Memory (MB): peak = 1426.164 ; gain = 554.125
-Synthesis Optimization Complete : Time (s): cpu = 00:00:55 ; elapsed = 00:00:55 . Memory (MB): peak = 1426.164 ; gain = 588.109
+Synthesis finished with 0 errors, 0 critical warnings and 3 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:40 ; elapsed = 00:00:53 . Memory (MB): peak = 1425.566 ; gain = 554.535
+Synthesis Optimization Complete : Time (s): cpu = 00:00:55 ; elapsed = 00:00:56 . Memory (MB): peak = 1425.566 ; gain = 586.949
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 1426.164 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 326 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 1425.566 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 345 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'Proto' is not ideal for floorplanning, since the cellview 'BldcUart' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1441.926 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1448.254 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   PLLE2_BASE => PLLE2_ADV: 1 instance 
 
-Synth Design complete | Checksum: 8af4de33
+Synth Design complete | Checksum: ee3fb724
 INFO: [Common 17-83] Releasing license: Synthesis
-67 Infos, 7 Warnings, 33 Critical Warnings and 0 Errors encountered.
+67 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:59 ; elapsed = 00:01:02 . Memory (MB): peak = 1441.926 ; gain = 981.074
-INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+synth_design: Time (s): cpu = 00:01:01 ; elapsed = 00:01:03 . Memory (MB): peak = 1448.254 ; gain = 990.605
 INFO: [Common 17-1381] The checkpoint 'C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.runs/synth_1/Proto.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Proto_utilization_synth.rpt -pb Proto_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Sep 14 22:12:52 2023...
+INFO: [Common 17-206] Exiting Vivado at Fri Sep 15 12:42:35 2023...

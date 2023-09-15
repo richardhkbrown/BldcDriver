@@ -32,7 +32,7 @@ input btnU,
 input btnL,
 input btnR,
 input btnD,
-output [8:0] led
+output [15:0] led
     );
     
     // Clocks
@@ -57,8 +57,6 @@ output [8:0] led
     wire [3:0] decimals;
     wire [9:0] digits;
     SegmentDisplay segDisp( .clk_48mhz(CLKOUT_48), .digits(digits), .decimals(decimals), .seg(seg), .dp(dp), .an(an) );
-    assign digits = 10'd0;
-    assign decimals = 4'd0;
     
     wire uinDatAvail;
     wire uinReq;
@@ -86,7 +84,7 @@ output [8:0] led
     BldcUart bldcUart( .clk_48mhz(CLKOUT_48), .btns(btnsDbc),
         .dataAvail(uinDatAvail), .inData(uinDataOut), .inReq(uinReq), .inAck(uinAck),
         .outData(uoutDataIn), .outReq(uoutReq), .outAck(uoutAck),
-        .setReq(setReq), .setAck(setAck), .setType(setType), .setData(setData), .debug(led[4:0]) );
+        .setReq(setReq), .setAck(setAck), .setType(setType), .setData(setData) );
 
     reg signed [9:0] ampData = 50;
     reg signed [9:0] rpmData = 0;
@@ -121,11 +119,10 @@ output [8:0] led
     assign decimals = setType==1 ? {4'b0000} :
                       {4'b1111};
                       
-    assign led[5] = uinReq;
-    assign led[6] = uinAck;
-    assign led[7] = uoutReq;
-    assign led[8] = uoutAck;
+    assign led[7-:8] = ampData[9:2];
+    assign led[15-:8] = digits[9:2];
 
+    
 // PLLE2_BASE  : In order to incorporate this function into the design,
 //   Verilog   : the following instance declaration needs to be placed
 //  instance   : in the body of the design code.  The instance name
