@@ -322,38 +322,38 @@ module BldcUart
                 
             10: // {btnC,btnU,btnL,btnR,btnD} handle button press
                 begin
-//                    if ( btnsReg[3] ) begin
-//                        if ( setType==0 ) begin
-//                            setData1024 <= ampData + 1;
-//                        end else begin
-//                            setData1024 <= ampData;
-//                        end
-//                        setType <= 0;
-//                    end else if ( btnsReg[2] ) begin
-//                        if ( setType==1 ) begin
-//                            setData1024 <= rpmData - 1;
-//                        end else begin
-//                            setData1024 <= rpmData;
-//                        end
-//                        setType <= 1;
-//                    end else if ( btnsReg[1] ) begin
-//                        if ( setType==1 ) begin
-//                            setData1024 <= rpmData + 1;
-//                        end else begin
-//                            setData1024 <= rpmData;
-//                        end
-//                        setType <= 1;
-//                   end else if ( btnsReg[0] ) begin
-//                        if ( setType==0 ) begin
-//                            setData1024 <= ampData - 1;
-//                        end else begin
-//                            setData1024 <= ampData;
-//                        end
-//                        setType <= 0;
-//                    end else if ( btnsReg[4] ) begin // reset amp
-//                        setType <= 0;
-//                        setData1024 <= $rtoi(0.5*MAX_AMP);
-//                    end
+                    if ( btnsReg[3] ) begin
+                        if ( setType==0 ) begin
+                            setData1024 <= ampData + 1;
+                        end else begin
+                            setData1024 <= ampData;
+                        end
+                        setType <= 0;
+                    end else if ( btnsReg[2] ) begin
+                        if ( setType==1 ) begin
+                            setData1024 <= rpmData - 1;
+                        end else begin
+                            setData1024 <= rpmData;
+                        end
+                        setType <= 1;
+                    end else if ( btnsReg[1] ) begin
+                        if ( setType==1 ) begin
+                            setData1024 <= rpmData + 1;
+                        end else begin
+                            setData1024 <= rpmData;
+                        end
+                        setType <= 1;
+                   end else if ( btnsReg[0] ) begin
+                        if ( setType==0 ) begin
+                            setData1024 <= ampData - 1;
+                        end else begin
+                            setData1024 <= ampData;
+                        end
+                        setType <= 0;
+                    end else if ( btnsReg[4] ) begin // reset amp
+                        setType <= 0;
+                        setData1024 <= $rtoi(0.5*MAX_AMP);
+                    end
                     state <= 11;
                 end
                 
