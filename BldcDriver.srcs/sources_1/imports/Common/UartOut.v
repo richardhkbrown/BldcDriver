@@ -52,6 +52,7 @@ module UartOut
     reg RDEN = 0;
     reg RST = 1;
     reg WREN = 0;
+    wire RDEN_EN;
     
     // Counter
     wire [(BITS_NEEDED-1):0] Q;
@@ -73,6 +74,7 @@ module UartOut
             fifoResetCount <= fifoResetCount - 1;
         end
     end
+    assign RDEN_EN = RDEN & !RST;
     
     // State machines
     reg [($clog2(11+1)):0] state = 0; // 11 is max state
@@ -189,7 +191,7 @@ module UartOut
       .WRERR(WRERR),             // 1-bit output write error
       .CLK(CLK),                 // 1-bit input clock
       .DI(DI),                   // Input data, width defined by DATA_WIDTH parameter
-      .RDEN(RDEN),               // 1-bit input read enable
+      .RDEN(RDEN_EN),               // 1-bit input read enable
       .RST(RST),                 // 1-bit input reset
       .WREN(WREN)                // 1-bit input write enable
     );

@@ -21,19 +21,20 @@
 
 
 module ModulatePwm
-#(parameter [63:0] CLK_RATE = 100000000, parameter FREQUENCY = 10000, parameter MAXAMP = 256) (
-    input clk,
+#(parameter FREQUENCY = 10000, parameter MAXAMP = 256) (
+    input clk_48mhz,
     input [9:0] amp,
     output reg D
     );
     
+    localparam [63:0] CLK_RATE = 48000000;
     localparam [63:0] RESET_COUNT = $rtoi((1.0/FREQUENCY)/(1.0/CLK_RATE));
     wire [31:0] Q;
     wire TC;
     wire CLK;
     wire CE;
     wire RST;
-    assign CLK = clk;
+    assign CLK = clk_48mhz;
     assign CE = 1'b1;
     assign RST = 1'b0;
     
@@ -48,13 +49,12 @@ module ModulatePwm
     reg [31:0] levalLatch = 32'd0;
     reg [9:0] ampLatch = 10'd0;
     reg D2 = 1'b0;
-    always @ ( posedge(clk) ) begin
+    always @ ( posedge(clk_48mhz) ) begin
         ampLatch <= amp;
         D <= D2;
     end
     
-    //always @ ( negedge(clk) ) begin
-    always @ ( posedge(clk) ) begin
+    always @ ( posedge(clk_48mhz) ) begin
         if ( Q <= LEVEL_VALS[ampLatch[($clog2(MAXAMP+1)-1):0]] ) begin
             D2 <= 1'b1;
         end else begin

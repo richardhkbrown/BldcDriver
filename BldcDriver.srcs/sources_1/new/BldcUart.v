@@ -28,8 +28,7 @@ module BldcUart
     input [7:0] inData,
     output reg inReq = 0,
     input inAck,
-    //output reg [7:0] outData = 0,
-    output [7:0] outData,
+    output reg [7:0] outData = 0,
     output reg outReq = 0,
     input outAck,
     output reg setReq = 0,
@@ -113,9 +112,8 @@ module BldcUart
     reg msgSign = 0;
     reg [($clog2(MAX_MSGCOUNT)-1):0] msgCount = 0;
     reg [7:0] msgBuffer [(MAX_MSGCOUNT-1):0];
-    assign outData = msgBuffer[msgCount-1];
     reg [4:0] btnsReg = 5'b00000;
-    
+
     // Old values
     reg signed [9:0] ampData = $rtoi(0.5*MAX_AMP);
     reg signed [9:0] rpmData = 0;
@@ -124,6 +122,8 @@ module BldcUart
     //always @ (negedge(clk)) begin
     always @ ( posedge(clk_48mhz) ) begin
     
+        outData <= msgBuffer[msgCount-1];
+            
         case ( state )
         
             // Wait for and process keypress from uart
@@ -144,12 +144,11 @@ module BldcUart
                         if ( inData == 65 || inData == 97 ) begin // A a
                             setType <= 0;
                             buffer[4] <= 65;
-                            bufferCount <= 1;
                         end else if ( inData == 82 || inData == 114 ) begin // R r
                             setType <= 1;
                             buffer[4] <= 82;
-                            bufferCount <= 1;
                         end
+                        bufferCount <= 1;
                         buffer[3] <= 43; // +
                         buffer[2] <= 48; // 0
                         buffer[1] <= 48; // 0
@@ -408,7 +407,7 @@ module BldcUart
                 
             15:
                 if ( outAck ) begin
-                    msgCount <= msgCount - 1;
+                    //msgCount <= msgCount - 1;
                     outReq <= 0;
                     state <= 16;
                 end

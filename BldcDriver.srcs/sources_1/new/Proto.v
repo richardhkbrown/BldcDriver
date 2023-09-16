@@ -51,7 +51,7 @@ output [15:0] led
     assign PWRDWN = 1'b0;
     assign RST = 1'b0;
     assign CLKFBIN = CLKFBOUT;
-    
+        
     // User interface implementation
     
     wire [3:0] decimals;
@@ -89,7 +89,7 @@ output [15:0] led
     reg signed [9:0] ampData = 50;
     reg signed [9:0] rpmData = 0;
     reg [($clog2(2+1)-1):0] state = 0;
-    always @ ( posedge(CLKOUT_48 )) begin
+    always @ ( posedge(CLKOUT_48) ) begin
     
         case(state)
         
@@ -118,10 +118,10 @@ output [15:0] led
                     ampData;
     assign decimals = setType==1 ? {4'b0000} :
                       {4'b1111};
-                      
-    assign led[7-:8] = ampData[9:2];
-    assign led[15-:8] = digits[9:2];
-
+    
+//    ModulatePwm #( .FREQUENCY(10000), .MAXAMP(100) ) modPwm(
+//        .clk_48mhz(CLKOUT_48), .amp(ampData), .D(led[0]) );
+//    assign led[15:1] = 15'b101010101010101;
     
 // PLLE2_BASE  : In order to incorporate this function into the design,
 //   Verilog   : the following instance declaration needs to be placed
@@ -170,7 +170,7 @@ output [15:0] led
    PLLE2_BASE_inst (
       // Clock Outputs: 1-bit (each) output: User configurable clock outputs
       .CLKOUT0(CLKOUT_1200),   // 1-bit output: CLKOUT0
-      .CLKOUT1(CLKOUT_48),   // 1-bit output: CLKOUT1
+      .CLKOUT1(TMP),   // 1-bit output: CLKOUT1
       .CLKOUT2(CLKOUT_10),   // 1-bit output: CLKOUT2
       .CLKOUT3(CLKOUT_100),   // 1-bit output: CLKOUT3
       .CLKOUT4(CLKOUT_33_3),   // 1-bit output: CLKOUT4
