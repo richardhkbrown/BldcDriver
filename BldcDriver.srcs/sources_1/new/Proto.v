@@ -31,8 +31,7 @@ input btnC,
 input btnU,
 input btnL,
 input btnR,
-input btnD,
-output [15:0] led
+input btnD
     );
     
     // Clocks
@@ -118,7 +117,7 @@ output [15:0] led
                     ampData;
     assign decimals = setType==1 ? {4'b0000} :
                       {4'b1111};
-    
+
 //    ModulatePwm #( .FREQUENCY(10000), .MAXAMP(100) ) modPwm(
 //        .clk_48mhz(CLKOUT_48), .amp(ampData), .D(led[0]) );
 //    assign led[15:1] = 15'b101010101010101;
@@ -170,7 +169,7 @@ output [15:0] led
    PLLE2_BASE_inst (
       // Clock Outputs: 1-bit (each) output: User configurable clock outputs
       .CLKOUT0(CLKOUT_1200),   // 1-bit output: CLKOUT0
-      .CLKOUT1(TMP),   // 1-bit output: CLKOUT1
+      .CLKOUT1(CLKOUT_48),   // 1-bit output: CLKOUT1
       .CLKOUT2(CLKOUT_10),   // 1-bit output: CLKOUT2
       .CLKOUT3(CLKOUT_100),   // 1-bit output: CLKOUT3
       .CLKOUT4(CLKOUT_33_3),   // 1-bit output: CLKOUT4

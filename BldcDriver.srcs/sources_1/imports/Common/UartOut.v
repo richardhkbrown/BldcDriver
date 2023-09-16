@@ -117,6 +117,10 @@ module UartOut
                     state <= 0;
                 end
                 
+            default:
+                begin
+                end
+                
         endcase
         
         // FIFO write
@@ -148,8 +152,12 @@ module UartOut
                 if ( !req ) begin
                     ack <= 0;
                     reqState <= 0;
+                end      
+                
+            default:
+                begin
                 end
-                        
+                           
         endcase
         
     end

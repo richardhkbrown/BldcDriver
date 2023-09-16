@@ -139,6 +139,14 @@ module UartIn
                     reqState <= 0;
                 end
                 
+            3:
+                begin
+                end            
+                
+            default:
+                begin
+                end
+                                
         endcase
        
     end
