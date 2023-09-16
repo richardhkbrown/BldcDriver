@@ -31,7 +31,8 @@ input btnC,
 input btnU,
 input btnL,
 input btnR,
-input btnD
+input btnD,
+output [1:0] led
     );
     
     // Clocks
@@ -79,7 +80,7 @@ input btnD
     wire setReq;
     reg setAck = 0;
     wire setType;
-    wire [9:0] setData;
+    wire signed [9:0] setData;
     BldcUart bldcUart( .clk_48mhz(CLKOUT_48), .btns(btnsDbc),
         .dataAvail(uinDatAvail), .inData(uinDataOut), .inReq(uinReq), .inAck(uinAck),
         .outData(uoutDataIn), .outReq(uoutReq), .outAck(uoutAck),
@@ -118,9 +119,12 @@ input btnD
     assign decimals = setType==1 ? {4'b0000} :
                       {4'b1111};
 
-//    ModulatePwm #( .FREQUENCY(10000), .MAXAMP(100) ) modPwm(
-//        .clk_48mhz(CLKOUT_48), .amp(ampData), .D(led[0]) );
-//    assign led[15:1] = 15'b101010101010101;
+    wire D;
+    ModulatePwm #( .FREQUENCY(10000), .MAXAMP(100) ) modPwm(
+        .clk_48mhz(CLKOUT_48), .amp(ampData), .D(D) );
+    
+    assign led[0] = D;
+    assign led[1] = setType;
     
 // PLLE2_BASE  : In order to incorporate this function into the design,
 //   Verilog   : the following instance declaration needs to be placed

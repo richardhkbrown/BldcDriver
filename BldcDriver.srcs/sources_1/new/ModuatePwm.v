@@ -46,8 +46,7 @@ module ModulatePwm
         end
     endgenerate
     
-    reg [31:0] levalLatch = 32'd0;
-    reg [9:0] ampLatch = 10'd0;
+    reg signed [9:0] ampLatch = 10'd0;
     reg D2 = 1'b0;
     always @ ( posedge(clk_48mhz) ) begin
         ampLatch <= amp;
@@ -86,7 +85,7 @@ module ModulatePwm
    ) COUNTER_TC_MACRO_inst (
       .Q(Q),     // Counter output bus, width determined by WIDTH_DATA parameter
       .TC(TC),   // 1-bit terminal count output, high = terminal count is reached
-      .CLK(clk), // 1-bit positive edge clock input
+      .CLK(clk_48mhz), // 1-bit positive edge clock input
       .CE(CE),   // 1-bit active high clock enable input
       .RST(RST)  // 1-bit active high synchronous reset
    );

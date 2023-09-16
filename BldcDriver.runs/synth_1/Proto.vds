@@ -3,8 +3,8 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Fri Sep 15 18:41:28 2023
-# Process ID: 18556
+# Start of session at: Fri Sep 15 21:40:18 2023
+# Process ID: 2864
 # Current directory: C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.runs/synth_1
 # Command line: vivado.exe -log Proto.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Proto.tcl
 # Log file: C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.runs/synth_1/Proto.vds
@@ -12,7 +12,7 @@
 # Running On: DESKTOP-B5G40IL, OS: Windows, CPU Frequency: 1992 MHz, CPU Physical cores: 4, Host memory: 8458 MB
 #-----------------------------------------------------------
 source Proto.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 429.605 ; gain = 163.703
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 430.703 ; gain = 162.828
 Command: read_checkpoint -auto_incremental -incremental C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/utils_1/imports/synth_1/BldcDriver.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/utils_1/imports/synth_1/BldcDriver.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -25,14 +25,13 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 11996
+INFO: [Synth 8-7075] Helper process launched with PID 2208
 INFO: [Synth 8-11241] undeclared symbol 'RDEN_EN', assumed default net type 'wire' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/imports/Common/UartIn.v:70]
 INFO: [Synth 8-11241] undeclared symbol 'CLKOUT5', assumed default net type 'wire' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/imports/Common/GhzPll.v:96]
 INFO: [Synth 8-11241] undeclared symbol 'CLKFB', assumed default net type 'wire' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/imports/Common/GhzPll.v:98]
-INFO: [Synth 8-11241] undeclared symbol 'clk', assumed default net type 'wire' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/ModuatePwm.v:89]
-INFO: [Synth 8-11241] undeclared symbol 'CLKFBIN', assumed default net type 'wire' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:52]
+INFO: [Synth 8-11241] undeclared symbol 'CLKFBIN', assumed default net type 'wire' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:53]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1249.809 ; gain = 411.023
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1249.043 ; gain = 411.570
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'Proto' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:23]
 INFO: [Synth 8-6157] synthesizing module 'SegmentDisplay' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/imports/Common/SegmentDisplay.v:23]
@@ -78,7 +77,6 @@ INFO: [Synth 8-6155] done synthesizing module 'FIFO18E1' (0#1) [C:/Xilinx/Vivado
 INFO: [Synth 8-6155] done synthesizing module 'xil_internal_svlib_FIFO_SYNC_MACRO' (0#1) [C:/Xilinx/Vivado/2023.1/data/verilog/src/unimacro/FIFO_SYNC_MACRO.v:25]
 INFO: [Synth 8-6155] done synthesizing module 'UartIn' (0#1) [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/imports/Common/UartIn.v:23]
 INFO: [Synth 8-6157] synthesizing module 'UartOut' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/imports/Common/UartOut.v:23]
-INFO: [Synth 8-226] default block is never used [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/imports/Common/UartOut.v:137]
 INFO: [Synth 8-6155] done synthesizing module 'UartOut' (0#1) [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/imports/Common/UartOut.v:23]
 INFO: [Synth 8-6157] synthesizing module 'Debouncer' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/imports/Common/Debouncer.v:23]
 	Parameter INPUT_WIDTH bound to: 5 - type: integer 
@@ -97,7 +95,19 @@ INFO: [Synth 8-6155] done synthesizing module 'Debouncer' (0#1) [C:/Users/Durkus
 INFO: [Synth 8-6157] synthesizing module 'BldcUart' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/BldcUart.v:23]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/BldcUart.v:127]
 INFO: [Synth 8-6155] done synthesizing module 'BldcUart' (0#1) [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/BldcUart.v:23]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:93]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:94]
+INFO: [Synth 8-6157] synthesizing module 'ModulatePwm' [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/ModuatePwm.v:23]
+	Parameter FREQUENCY bound to: 10000 - type: integer 
+	Parameter MAXAMP bound to: 100 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'xil_internal_svlib_COUNTER_TC_MACRO__parameterized1' [C:/Xilinx/Vivado/2023.1/data/verilog/src/unimacro/COUNTER_TC_MACRO.v:24]
+	Parameter COUNT_BY bound to: 48'b000000000000000000000000000000000000000000000001 
+	Parameter DEVICE bound to: 7SERIES - type: string 
+	Parameter DIRECTION bound to: UP - type: string 
+	Parameter RESET_UPON_TC bound to: TRUE - type: string 
+	Parameter TC_VALUE bound to: 64'b0000000000000000000000000000000000000000000000000001001011000000 
+	Parameter WIDTH_DATA bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xil_internal_svlib_COUNTER_TC_MACRO__parameterized1' (0#1) [C:/Xilinx/Vivado/2023.1/data/verilog/src/unimacro/COUNTER_TC_MACRO.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'ModulatePwm' (0#1) [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/ModuatePwm.v:23]
 INFO: [Synth 8-6157] synthesizing module 'PLLE2_BASE' [C:/Xilinx/Vivado/2023.1/scripts/rt/data/unisim_comp.v:109492]
 	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
 	Parameter CLKFBOUT_MULT bound to: 12 - type: integer 
@@ -127,19 +137,19 @@ INFO: [Synth 8-6157] synthesizing module 'PLLE2_BASE' [C:/Xilinx/Vivado/2023.1/s
 INFO: [Synth 8-6155] done synthesizing module 'PLLE2_BASE' (0#1) [C:/Xilinx/Vivado/2023.1/scripts/rt/data/unisim_comp.v:109492]
 INFO: [Synth 8-6155] done synthesizing module 'Proto' (0#1) [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/Proto.v:23]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1367.715 ; gain = 528.930
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1367.211 ; gain = 529.738
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1367.715 ; gain = 528.930
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1367.211 ; gain = 529.738
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1367.715 ; gain = 528.930
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1367.211 ; gain = 529.738
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 1367.715 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 5 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.037 . Memory (MB): peak = 1367.211 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 6 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -153,32 +163,33 @@ Resolution: To avoid this warning, move constraints listed in [.Xil/Proto_propIm
 INFO: [Timing 38-2] Deriving generated clocks
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1389.234 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1367.211 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   PLLE2_BASE => PLLE2_ADV: 1 instance 
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1389.234 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1367.211 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1389.234 ; gain = 550.449
+Finished Constraint Validation : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1367.211 ; gain = 529.738
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1389.234 ; gain = 550.449
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1367.211 ; gain = 529.738
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1389.234 ; gain = 550.449
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1367.211 ; gain = 529.738
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'reqState_reg' in module 'UartIn'
 INFO: [Synth 8-802] inferred FSM for state register 'reqState_reg' in module 'UartOut'
+WARNING: [Synth 8-3936] Found unconnected internal register 'ampLatch_reg' and it is trimmed from '10' to '7' bits. [C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.srcs/sources_1/new/ModuatePwm.v:52]
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Proto'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
@@ -207,7 +218,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'reqState_reg' using encodi
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'Proto'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1389.234 ; gain = 550.449
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1367.211 ; gain = 529.738
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -224,14 +235,16 @@ Detailed RTL Component Info :
 	               11 Bit    Registers := 1     
 	               10 Bit    Registers := 5     
 	                8 Bit    Registers := 15    
-	                7 Bit    Registers := 1     
+	                7 Bit    Registers := 2     
 	                5 Bit    Registers := 5     
 	                4 Bit    Registers := 3     
 	                3 Bit    Registers := 7     
 	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 20    
+	                1 Bit    Registers := 22    
++---ROMs : 
+	                    ROMs := 1     
 +---Muxes : 
-	   2 Input   32 Bit        Muxes := 6     
+	   2 Input   32 Bit        Muxes := 7     
 	   2 Input   11 Bit        Muxes := 2     
 	   2 Input   10 Bit        Muxes := 6     
 	   3 Input    8 Bit        Muxes := 3     
@@ -246,8 +259,9 @@ Detailed RTL Component Info :
 	   2 Input    5 Bit        Muxes := 5     
 	   6 Input    5 Bit        Muxes := 1     
 	   5 Input    4 Bit        Muxes := 1     
-	   4 Input    4 Bit        Muxes := 3     
+	   4 Input    4 Bit        Muxes := 2     
 	   2 Input    4 Bit        Muxes := 6     
+	   3 Input    4 Bit        Muxes := 1     
 	   2 Input    3 Bit        Muxes := 14    
 	   3 Input    3 Bit        Muxes := 8     
 	  21 Input    3 Bit        Muxes := 1     
@@ -277,10 +291,13 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port amp[9] in module ModulatePwm is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amp[8] in module ModulatePwm is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amp[7] in module ModulatePwm is either unconnected or has no load
 WARNING: [Synth 8-3332] Sequential element (FSM_onehot_reqState_reg[3]) is unused and will be removed from module UartIn.
 WARNING: [Synth 8-3332] Sequential element (FSM_onehot_reqState_reg[3]) is unused and will be removed from module UartOut.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 1389.234 ; gain = 550.449
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 1367.211 ; gain = 529.738
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -293,9 +310,8 @@ ROM: Preliminary Mapping Report
 |SegmentDisplay | TENBIT     | 1024x7        | LUT            | 
 |SegmentDisplay | TENBIT     | 1024x7        | LUT            | 
 |SegmentDisplay | TENBIT     | 1024x6        | LUT            | 
-|SegmentDisplay | TENBIT     | 1024x7        | LUT            | 
-|SegmentDisplay | TENBIT     | 1024x7        | LUT            | 
 |SegmentDisplay | TENBIT     | 1024x6        | LUT            | 
+|ModulatePwm    | sel        | 128x10        | Block RAM      | 
 +---------------+------------+---------------+----------------+
 
 ---------------------------------------------------------------------------------
@@ -305,19 +321,20 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:54 ; elapsed = 00:00:56 . Memory (MB): peak = 1394.219 ; gain = 555.434
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:48 ; elapsed = 00:00:50 . Memory (MB): peak = 1394.508 ; gain = 557.035
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 1416.027 ; gain = 577.242
+Finished Timing Optimization : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 1416.414 ; gain = 578.941
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance modPwm/sel (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:56 ; elapsed = 00:00:58 . Memory (MB): peak = 1427.172 ; gain = 588.387
+Finished Technology Mapping : Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 1427.375 ; gain = 589.902
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -329,19 +346,19 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:03 ; elapsed = 00:01:05 . Memory (MB): peak = 1432.480 ; gain = 593.695
+Finished IO Insertion : Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 1434.059 ; gain = 596.586
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:03 ; elapsed = 00:01:05 . Memory (MB): peak = 1432.480 ; gain = 593.695
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 1434.059 ; gain = 596.586
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:03 ; elapsed = 00:01:06 . Memory (MB): peak = 1432.480 ; gain = 593.695
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:56 ; elapsed = 00:00:58 . Memory (MB): peak = 1434.059 ; gain = 596.586
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -353,6 +370,7 @@ DSP Final Report (the ' indicates corresponding REG is set)
 +----------------------------------------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 |xil_internal_svlib_COUNTER_TC_MACRO                 | Dynamic     | -      | -      | -      | -      | 48     | -    | -    | -    | -    | -     | 0    | 1    | 
 |xil_internal_svlib_COUNTER_TC_MACRO__parameterized0 | Dynamic     | -      | -      | -      | -      | 48     | -    | -    | -    | -    | -     | 0    | 1    | 
+|xil_internal_svlib_COUNTER_TC_MACRO__parameterized1 | Dynamic     | -      | -      | -      | -      | 48     | -    | -    | -    | -    | -     | 0    | 1    | 
 +----------------------------------------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 
@@ -366,46 +384,47 @@ Report Cell Usage:
 +------+-----------+------+
 |      |Cell       |Count |
 +------+-----------+------+
-|1     |CARRY4     |   318|
-|2     |DSP48E1    |     2|
+|1     |CARRY4     |   322|
+|2     |DSP48E1    |     3|
 |3     |FIFO18E1   |     2|
 |4     |LUT1       |    55|
-|5     |LUT2       |   207|
-|6     |LUT3       |   605|
-|7     |LUT4       |   251|
-|8     |LUT5       |   267|
-|9     |LUT6       |  1024|
-|10    |MUXF7      |    31|
+|5     |LUT2       |   215|
+|6     |LUT3       |   610|
+|7     |LUT4       |   270|
+|8     |LUT5       |   240|
+|9     |LUT6       |  1062|
+|10    |MUXF7      |    26|
 |11    |MUXF8      |     2|
 |12    |PLLE2_BASE |     1|
-|13    |FDRE       |   274|
-|14    |FDSE       |    22|
-|15    |IBUF       |     7|
-|16    |OBUF       |    13|
+|13    |RAMB18E1   |     1|
+|14    |FDRE       |   276|
+|15    |FDSE       |    22|
+|16    |IBUF       |     7|
+|17    |OBUF       |    15|
 +------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:03 ; elapsed = 00:01:06 . Memory (MB): peak = 1432.480 ; gain = 593.695
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:56 ; elapsed = 00:00:58 . Memory (MB): peak = 1434.059 ; gain = 596.586
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 3 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:45 ; elapsed = 00:01:03 . Memory (MB): peak = 1432.480 ; gain = 572.176
-Synthesis Optimization Complete : Time (s): cpu = 00:01:03 ; elapsed = 00:01:06 . Memory (MB): peak = 1432.480 ; gain = 593.695
+Synthesis finished with 0 errors, 0 critical warnings and 7 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:42 ; elapsed = 00:00:55 . Memory (MB): peak = 1434.059 ; gain = 596.586
+Synthesis Optimization Complete : Time (s): cpu = 00:00:57 ; elapsed = 00:00:58 . Memory (MB): peak = 1434.059 ; gain = 596.586
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.055 . Memory (MB): peak = 1432.480 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 356 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 1434.059 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 357 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'Proto' is not ideal for floorplanning, since the cellview 'BldcUart' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1448.195 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1449.816 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   PLLE2_BASE => PLLE2_ADV: 1 instance 
 
-Synth Design complete | Checksum: 87c4e9fb
+Synth Design complete | Checksum: 8b3967dd
 INFO: [Common 17-83] Releasing license: Synthesis
-68 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
+71 Infos, 8 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:10 ; elapsed = 00:01:14 . Memory (MB): peak = 1448.195 ; gain = 990.852
+synth_design: Time (s): cpu = 00:01:02 ; elapsed = 00:01:05 . Memory (MB): peak = 1449.816 ; gain = 992.023
 INFO: [Common 17-1381] The checkpoint 'C:/Users/DurkusMaximus/Desktop/Xilinx/BldcDriver/BldcDriver.runs/synth_1/Proto.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Proto_utilization_synth.rpt -pb Proto_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Sep 15 18:42:54 2023...
+INFO: [Common 17-206] Exiting Vivado at Fri Sep 15 21:41:33 2023...
